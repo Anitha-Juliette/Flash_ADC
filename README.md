@@ -1,20 +1,18 @@
-</p align = "center">  
-# VSD Mixed-signal PD Research Program  
-## Flash_ADC  
-</p>
-## VSD OPENSOURCE TOOLS INSTALLATION  
-### Vsdflow creation  
+#                  VSD Mixed-signal PD Research Program 
+##                                Flash_ADC  
+##                  VSD OPENSOURCE TOOLS INSTALLATION  
+#### Vsdflow creation  
 * sudo apt-get install git  
-* git clone https://github.com/kunalg123/vsdflow.git
-### Magic installation  
+* git clone https://github.com/kunalg123/vsdflow.git  
+#### Magic installation  
 * $ sudo apt-get install m4 // Install M4 preprocessor  
 * $ sudo apt-get install tcsh // Install tcsh shell  
 * $ sudo apt-get install csh // Install csh shell  
-* $ sudo apt-get install libx11-dev // Install xlib
+* $ sudo apt-get install libx11-dev // Install xlib  
 //If you wish to have the Tcl/Tk wrapper around magic (recommended) you will need to install the Tcl/Tk libraries. Version 8.5 or higher is highly recommended.Tcl/Tk//  
 * $ sudo apt-get install tcl-dev tk-dev  
 // Cairo graphics interface ("magic -d XR")//  
-* $ sudo apt-get install libcairo2-dev
+* $ sudo apt-get install libcairo2-dev  
 // The OpenGL interface//  
 * $ sudo apt-get install mesa-common-dev libglu1-mesa-dev  
 // ncurses library //  
