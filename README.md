@@ -21,31 +21,31 @@
 * $ ./configure  
 * $ make  
 * $  sudo make install
-### Netgen installation  
+#### Netgen installation  
 * $ git clone git://opencircuitdesign.com/netgen  
 * $ cd netgen  
 * $ ./configure  
 * $  make  
 * $  sudo make install
-### xcschem installation  
+#### xcschem installation  
 * $ git clone https://github.com/StefanSchippers/xschem.git xschem_git  
 * $ sudo apt-get install flex  
 * $ sudo apt-get install bison  
 * $ sudo apt-get install libxpm-dev  
 
-### ngspice installation  
+#### ngspice installation  
 * $ sudo apt-get update  
 * $ sudo apt-get install ngspice  
 * $ ngspice -v  
 
-### Openpdks installation  
+#### Openpdks installation  
 * $ git clone git://opencircuitdesign.com/open_pdks  
 * $ cd open_pdks  
 * $	./configure --enable-sky130-pdk  
 * $  make  
 * $  sudo make install
 
-### Align installation
+#### Align installation
 * $ sudo apt-get install libboost-all-dev
 * $ sudo apt-get update  
 * $ sudo apt-get install lp-solve  
@@ -68,7 +68,7 @@
 * $ git clone https://github.com/ALIGN-analoglayout/ALIGN-pdk-sky130  
 * $ move SKY130_PDK folder to /home/ani/ALIGN-public/pdks 
 
-### Running Align tool with examples  
+#### Running Align tool with examples  
 * $ python -m venv general  
 * $ source general/bin/activate  
 * mkdir work  
@@ -89,3 +89,8 @@
 
 ### Verifying openpdk installation
 ![image](https://user-images.githubusercontent.com/86735438/218019339-4747011f-7260-4965-b390-0f79ce80ced8.png)
+#### magic test
+![image](https://user-images.githubusercontent.com/86735438/218021669-23945e4e-9878-4e21-bd13-fa0dd40c3580.png)
+#### xschem test  
+#### netgen test
+![image](https://user-images.githubusercontent.com/86735438/218021867-2bf931d3-4af7-4cba-89dc-9c8193aee448.png)
