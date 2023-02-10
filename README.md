@@ -87,3 +87,5 @@
 
 ![Screenshot from 2023-02-08 16-26-39](https://user-images.githubusercontent.com/86735438/217510586-6eb96b5a-f8d6-45fb-a3cd-b073e41ba7ac.png)
 
+### Verifying openpdk installation
+![image](https://user-images.githubusercontent.com/86735438/218019339-4747011f-7260-4965-b390-0f79ce80ced8.png)
