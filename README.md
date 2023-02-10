@@ -92,5 +92,13 @@
 #### magic test
 ![image](https://user-images.githubusercontent.com/86735438/218021669-23945e4e-9878-4e21-bd13-fa0dd40c3580.png)
 #### xschem test  
+![image](https://user-images.githubusercontent.com/86735438/218042832-459f7237-9ffb-4544-a7b5-128601d14a87.png)
 #### netgen test
-![image](https://user-images.githubusercontent.com/86735438/218021867-2bf931d3-4af7-4cba-89dc-9c8193aee448.png)
+![image](https://user-images.githubusercontent.com/86735438/218021867-2bf931d3-4af7-4cba-89dc-9c8193aee448.png)  
+### LAB - INVERTER using xschem
+#### INVERTER CREATION
+![image](https://user-images.githubusercontent.com/86735438/218067487-44814305-cffc-4ba1-a46e-3e1ce8101e23.png)
+#### SYSMBOL CREATION  
+![image](https://user-images.githubusercontent.com/86735438/218069967-530139fd-f7f3-46b4-a330-15eee45617a1.png)
+
+
