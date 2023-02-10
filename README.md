@@ -109,6 +109,8 @@
 
 ### CREATING INVERTER LAYOUT IN MAGIC - EXPORTING NETLIST
 ![image](https://user-images.githubusercontent.com/86735438/218123932-1529aac0-6c37-4bb4-a350-266fb85550e8.png)
+![image](https://user-images.githubusercontent.com/86735438/218146129-3274f54a-bb3c-421e-be0f-2abf6a34c393.png)
+
 
 
 
