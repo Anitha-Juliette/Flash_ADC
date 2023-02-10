@@ -98,7 +98,16 @@
 ### LAB - INVERTER using xschem
 #### INVERTER CREATION
 ![image](https://user-images.githubusercontent.com/86735438/218079286-118f31c9-77dd-412e-b01b-c1f4038f82f4.png)
-#### SYSMBOL CREATION  
+#### SYMBOL CREATION  
 ![image](https://user-images.githubusercontent.com/86735438/218079115-b6c12b92-8e34-4b1a-afc5-b6c054249006.png)
+#### TESTBENCH CREATION
+![image](https://user-images.githubusercontent.com/86735438/218113858-cc41f642-78cd-4d3a-a07f-93c618ebd188.png)
+#### inverter_tb.spice Netlist
+![image](https://user-images.githubusercontent.com/86735438/218114335-b25acc39-5b98-4b3d-ba48-a85cb3a8ada5.png)
+#### Simulation
+![image](https://user-images.githubusercontent.com/86735438/218115756-72e44221-a2c2-4269-a0a5-5c9e86d92c97.png)
+
+
+
 
 
