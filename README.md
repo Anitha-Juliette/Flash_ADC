@@ -97,7 +97,7 @@
 ![image](https://user-images.githubusercontent.com/86735438/218021867-2bf931d3-4af7-4cba-89dc-9c8193aee448.png)  
 ### LAB - INVERTER using xschem
 #### INVERTER CREATION
-![image](https://user-images.githubusercontent.com/86735438/218079286-118f31c9-77dd-412e-b01b-c1f4038f82f4.png)
+![image](https://user-images.githubusercontent.com/86735438/218141200-37a986a8-eb03-4f02-ad32-8d8814b8835b.png)
 #### SYMBOL CREATION  
 ![image](https://user-images.githubusercontent.com/86735438/218079115-b6c12b92-8e34-4b1a-afc5-b6c054249006.png)
 #### TESTBENCH CREATION
