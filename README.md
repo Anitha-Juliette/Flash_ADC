@@ -88,7 +88,19 @@
 ![Screenshot from 2023-02-08 16-26-39](https://user-images.githubusercontent.com/86735438/217510586-6eb96b5a-f8d6-45fb-a3cd-b073e41ba7ac.png)
 
 ### Verifying openpdk installation
-![image](https://user-images.githubusercontent.com/86735438/218019339-4747011f-7260-4965-b390-0f79ce80ced8.png)
+$ mkdir Lab1_and
+$ cd Lab1_and
+$ mkdir mag
+$ mkdir netgen
+$ mkdir xschem
+$ cd xschem
+$ cp /usr/local/share/pdk/sky130A/libs.tech/xschem/xschemrc .
+$ cp /usr/local/share/pdk/sky130A/libs.tech/ngspice/spinit .spiceinit
+$ cd ../mag
+$ cp /usr/local/share/pdk/sky130A/libs.tech/magic/sky130A.magicrc .magicrc
+$ cd ../netgen
+$ cp /usr/local/share/pdk/sky130A/libs.tech/netgen//sky130A_setup.tcl .
+![image](https://user-images.githubusercontent.com/86735438/218258897-31956dfc-05a7-49ba-9650-d00fd3d7217e.png)
 #### magic test
 ![image](https://user-images.githubusercontent.com/86735438/218021669-23945e4e-9878-4e21-bd13-fa0dd40c3580.png)
 #### xschem test  
