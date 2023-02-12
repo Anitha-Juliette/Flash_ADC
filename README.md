@@ -162,6 +162,8 @@ $ cp /usr/local/share/pdk/sky130A/libs.tech/netgen//sky130A_setup.tcl .
     .include my_model_file.mod
     .end
 
+![image](https://user-images.githubusercontent.com/86735438/218333162-8946d2a4-6636-4382-ad38-fd3bc625098d.png)
+![image](https://user-images.githubusercontent.com/86735438/218333181-a09a474d-571f-45ea-9fc8-afa8a060bc2a.png)
 
 
 
