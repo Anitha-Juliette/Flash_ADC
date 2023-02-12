@@ -123,10 +123,11 @@ $ cp /usr/local/share/pdk/sky130A/libs.tech/netgen//sky130A_setup.tcl .
 ### CREATING INVERTER LAYOUT IN MAGIC - EXPORTING NETLIST
 ![image](https://user-images.githubusercontent.com/86735438/218123932-1529aac0-6c37-4bb4-a350-266fb85550e8.png)
 ![image](https://user-images.githubusercontent.com/86735438/218146129-3274f54a-bb3c-421e-be0f-2abf6a34c393.png)
-![image](https://user-images.githubusercontent.com/86735438/218322187-cd5672c0-5fd1-46c5-8f91-e5a1d8c2f75b.png)
-![image](https://user-images.githubusercontent.com/86735438/218322452-0c8f66b0-5590-44a2-9b3e-e3dca8ed1bca.png)
-![image](https://user-images.githubusercontent.com/86735438/218322720-e8df6317-58e8-4484-b334-61df7672b90b.png)
-![image](https://user-images.githubusercontent.com/86735438/218324153-0e693a0f-9a9b-424e-9095-2526d928499c.png)
+![image](https://user-images.githubusercontent.com/86735438/218331591-a2410f51-ce9f-4392-9ac9-dbc6e8876c14.png)
+![image](https://user-images.githubusercontent.com/86735438/218331756-a7b1a4c3-dd13-4db4-9953-4079ee979850.png)
+![image](https://user-images.githubusercontent.com/86735438/218331854-e858b530-524a-441d-b85f-41ff880f89c7.png)
+![image](https://user-images.githubusercontent.com/86735438/218331882-27693c56-9ad0-4c54-a1c0-fd6856ba617d.png)
+
 
 
 
