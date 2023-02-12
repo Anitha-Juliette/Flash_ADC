@@ -127,6 +127,8 @@ $ cp /usr/local/share/pdk/sky130A/libs.tech/netgen//sky130A_setup.tcl .
 ![image](https://user-images.githubusercontent.com/86735438/218331756-a7b1a4c3-dd13-4db4-9953-4079ee979850.png)
 ![image](https://user-images.githubusercontent.com/86735438/218331854-e858b530-524a-441d-b85f-41ff880f89c7.png)
 ![image](https://user-images.githubusercontent.com/86735438/218331882-27693c56-9ad0-4c54-a1c0-fd6856ba617d.png)
+![image](https://user-images.githubusercontent.com/86735438/218332205-f5a7ba8c-d75a-410b-91b8-1e092f369336.png)
+
 
 
 
