@@ -1,6 +1,7 @@
 #                  VSD Mixed-signal PD Research Program 
 ##                                Flash_ADC  
-##                  VSD OPENSOURCE TOOLS INSTALLATION  
+### WEEK0
+###                  VSD OPENSOURCE TOOLS INSTALLATION  
 #### Vsdflow creation  
 * sudo apt-get install git  
 * git clone https://github.com/kunalg123/vsdflow.git  
