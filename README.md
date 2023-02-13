@@ -108,20 +108,25 @@
 ![image](https://user-images.githubusercontent.com/86735438/218042832-459f7237-9ffb-4544-a7b5-128601d14a87.png)
 #### netgen test
 ![image](https://user-images.githubusercontent.com/86735438/218021867-2bf931d3-4af7-4cba-89dc-9c8193aee448.png)  
-### LAB - INVERTER using xschem
-#### INVERTER CREATION
+### DESIGN 1 - INVERTER 
+#### INVERTER CREATION using xschem  
+###### An inverter Schematic is created by importing components from Open Pdk library. 
 ![image](https://user-images.githubusercontent.com/86735438/218141200-37a986a8-eb03-4f02-ad32-8d8814b8835b.png)
 #### SYMBOL CREATION  
+###### Inorder for the subcircuit to be used in higher level circuits, a symbol is     created for the sub circuit inverter.
 ![image](https://user-images.githubusercontent.com/86735438/218079115-b6c12b92-8e34-4b1a-afc5-b6c054249006.png)
 #### TESTBENCH CREATION
+###### A testbench is created to invoke the Inverter symbol, reference the libraries and set up the simulation environment- transient /dc analysis
 ![image](https://user-images.githubusercontent.com/86735438/218113858-cc41f642-78cd-4d3a-a07f-93c618ebd188.png)
 #### inverter_tb.spice Netlist
+###### A Spice Netlist for the inverter testbench is created.
 ![image](https://user-images.githubusercontent.com/86735438/218114335-b25acc39-5b98-4b3d-ba48-a85cb3a8ada5.png)  
 #### Invoking ngspice from xschem to run Netlist
+###### Through ngspice, the netlist is invoked and pre-layout simulation is executed.
 ![image](https://user-images.githubusercontent.com/86735438/218296498-726f4ec4-4ed3-482d-829c-5e286e3d8805.png)
 #### Simulation
 ![image](https://user-images.githubusercontent.com/86735438/218296462-26e9b141-d361-496b-b9fc-e36bbecc7bf8.png)
-### CREATING INVERTER LAYOUT IN MAGIC - EXPORTING NETLIST
+### CREATING INVERTER LAYOUT IN MAGIC(invoked from Netlist from ngspice) - EXPORTING NETLIST & POST LAYOUT SIMULATION
 ![image](https://user-images.githubusercontent.com/86735438/218123932-1529aac0-6c37-4bb4-a350-266fb85550e8.png)
 ![image](https://user-images.githubusercontent.com/86735438/218146129-3274f54a-bb3c-421e-be0f-2abf6a34c393.png)
 ![image](https://user-images.githubusercontent.com/86735438/218331591-a2410f51-ce9f-4392-9ac9-dbc6e8876c14.png)
