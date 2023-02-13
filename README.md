@@ -1,6 +1,5 @@
-#                  VSD Mixed-signal PD Research Program 
-##                                Flash_ADC  
-### WEEK0
+##                  VSD Mixed-signal PD Research Program - Flash_ADC  
+### <div align="center"> WEEK0 AI's
 ###                  VSD OPENSOURCE TOOLS INSTALLATION  
 #### Vsdflow creation  
    * sudo apt-get install git  
