@@ -127,16 +127,10 @@
 ![image](https://user-images.githubusercontent.com/86735438/218296462-26e9b141-d361-496b-b9fc-e36bbecc7bf8.png)
 ### CREATING INVERTER LAYOUT IN MAGIC(invoked from Netlist from ngspice) - EXPORTING NETLIST & POST LAYOUT SIMULATION
   ![image](https://user-images.githubusercontent.com/86735438/219448463-560e803a-d8e5-4e86-8401-ef9082ca39e4.png)
-![Uploading image.png…]()
+![image](https://user-images.githubusercontent.com/86735438/219465982-eafd6c2a-b2fd-48c0-a3b7-c64b6cd5ea40.png)
 ![image](https://user-images.githubusercontent.com/86735438/219462668-209208d7-8fe0-4500-82dc-d2966a05fee2.png)
 ![image](https://user-images.githubusercontent.com/86735438/219463391-24da5f0b-45ab-4e64-a5f9-8bdd51445e3c.png)
 ![image](https://user-images.githubusercontent.com/86735438/219463202-0d7349d2-d6aa-435d-9486-2f1220516c82.png)
-![image](https://user-images.githubusercontent.com/86735438/218123932-1529aac0-6c37-4bb4-a350-266fb85550e8.png)
-![image](https://user-images.githubusercontent.com/86735438/218146129-3274f54a-bb3c-421e-be0f-2abf6a34c393.png)
-![image](https://user-images.githubusercontent.com/86735438/218331591-a2410f51-ce9f-4392-9ac9-dbc6e8876c14.png)
-![image](https://user-images.githubusercontent.com/86735438/218331756-a7b1a4c3-dd13-4db4-9953-4079ee979850.png)
-![image](https://user-images.githubusercontent.com/86735438/218331854-e858b530-524a-441d-b85f-41ff880f89c7.png)
-![image](https://user-images.githubusercontent.com/86735438/218331882-27693c56-9ad0-4c54-a1c0-fd6856ba617d.png)
 ![image](https://user-images.githubusercontent.com/86735438/218332205-f5a7ba8c-d75a-410b-91b8-1e092f369336.png)  
 ## DESIGN 2 - PRELAYOUT SIMULATION  
     ***Netlist description for prelayout simulation***
