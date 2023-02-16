@@ -131,6 +131,7 @@
 ![image](https://user-images.githubusercontent.com/86735438/219462668-209208d7-8fe0-4500-82dc-d2966a05fee2.png)
 ![image](https://user-images.githubusercontent.com/86735438/219463391-24da5f0b-45ab-4e64-a5f9-8bdd51445e3c.png)
 ![image](https://user-images.githubusercontent.com/86735438/219463202-0d7349d2-d6aa-435d-9486-2f1220516c82.png)
+![image](https://user-images.githubusercontent.com/86735438/219471010-d805927c-c9d3-4d33-8e84-189d0a09767b.png)
 ![image](https://user-images.githubusercontent.com/86735438/218332205-f5a7ba8c-d75a-410b-91b8-1e092f369336.png)  
 ## DESIGN 2 - PRELAYOUT SIMULATION  
     ***Netlist description for prelayout simulation***
