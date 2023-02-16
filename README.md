@@ -119,12 +119,12 @@
 ![image](https://user-images.githubusercontent.com/86735438/218113858-cc41f642-78cd-4d3a-a07f-93c618ebd188.png)
 #### inverter_tb.spice Netlist
 ###### A Spice Netlist for the inverter testbench is created.
-![image](https://user-images.githubusercontent.com/86735438/218114335-b25acc39-5b98-4b3d-ba48-a85cb3a8ada5.png)  
+![image](https://user-images.githubusercontent.com/86735438/219472680-cc08fef7-3ed3-4d51-8056-1848f1bb4f34.png)  
 #### Invoking ngspice from xschem to run Netlist
 ###### Through ngspice, the netlist is invoked and pre-layout simulation is executed.
 ![image](https://user-images.githubusercontent.com/86735438/218296498-726f4ec4-4ed3-482d-829c-5e286e3d8805.png)
 #### Simulation
-![image](https://user-images.githubusercontent.com/86735438/218296462-26e9b141-d361-496b-b9fc-e36bbecc7bf8.png)
+![image](https://user-images.githubusercontent.com/86735438/219472386-9894635c-fa6c-486a-852c-83de01a2b6dd.png)
 ### CREATING INVERTER LAYOUT IN MAGIC(invoked from Netlist from ngspice) - EXPORTING NETLIST & POST LAYOUT SIMULATION
   ![image](https://user-images.githubusercontent.com/86735438/219448463-560e803a-d8e5-4e86-8401-ef9082ca39e4.png)
 ![image](https://user-images.githubusercontent.com/86735438/219465982-eafd6c2a-b2fd-48c0-a3b7-c64b6cd5ea40.png)
