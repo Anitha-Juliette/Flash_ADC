@@ -178,8 +178,12 @@
   ![image](https://user-images.githubusercontent.com/86735438/219665323-55499ea0-490e-475e-ac32-628fb0592897.png)
   ![image](https://user-images.githubusercontent.com/86735438/219681463-b567e966-f130-4c9a-9c7e-c6658e4fbfdb.png)
 ![image](https://user-images.githubusercontent.com/86735438/219681490-8c2cb897-ffe0-41f0-a6f7-ef89b93fcfd1.png)
-
   ![image](https://user-images.githubusercontent.com/86735438/219680963-be93df16-9c35-4aa6-888a-5e8d109dc01a.png)
+  
+  ###                  PRELAYOUT SIMULATION OF COMPLEX FUNCTION  
+  ![image](https://user-images.githubusercontent.com/86735438/219750259-51a0dea6-cd74-40fd-83d5-6987138aa4a3.png) 
+  ![image](https://user-images.githubusercontent.com/86735438/219749405-397e8822-1a33-4874-9dbb-21c62b3f3635.png)
+
 
 
 
