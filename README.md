@@ -173,6 +173,10 @@
 ** INVERTER USING ALIGN
   ![image](https://user-images.githubusercontent.com/86735438/219578385-481cd7de-9958-4b1a-8846-bbf74bc1e92a.png)
 ![image](https://user-images.githubusercontent.com/86735438/219578504-77c43f40-778d-42d6-a613-200218dc60b2.png)
+![image](https://user-images.githubusercontent.com/86735438/219665164-9d1d5c4f-4628-44c7-96b2-031d12edcf69.png)
+![image](https://user-images.githubusercontent.com/86735438/219665225-d17d7784-8d69-4b5a-9071-545f1da95950.png)
+  ![image](https://user-images.githubusercontent.com/86735438/219665323-55499ea0-490e-475e-ac32-628fb0592897.png)
+
 
 
 
