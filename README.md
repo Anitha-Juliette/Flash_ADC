@@ -188,6 +188,9 @@
   ![image](https://user-images.githubusercontent.com/86735438/219793613-62ca25c1-4927-4e72-9d2a-f790de890478.png)
   ![image](https://user-images.githubusercontent.com/86735438/219793747-8d532d13-1bae-46fc-b4ab-daf092bb0bfe.png)
 ![image](https://user-images.githubusercontent.com/86735438/219793830-b1eca535-3caa-4bb5-bd03-b7e62b308219.png)
+ ###                  ALIGN - POSTLAYOUT SIMULATION OF COMPLEX FUNCTION 
+  ![image](https://user-images.githubusercontent.com/86735438/219811115-9ecc610b-4e0c-4d2b-9964-1186b2f53d6a.png)
+
 
 
 
