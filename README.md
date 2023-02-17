@@ -149,6 +149,7 @@
 
  ![image](https://user-images.githubusercontent.com/86735438/219808556-1a10b36c-5e17-4a51-8413-59c466b99a37.png)
   ###                  POSTLAYOUT SIMULATION OF COMPLEX FUNCTION 
+![image](https://user-images.githubusercontent.com/86735438/219812937-a921017c-59e2-4d0e-baf6-c7912fb0551a.png)
   ![image](https://user-images.githubusercontent.com/86735438/219793613-62ca25c1-4927-4e72-9d2a-f790de890478.png)
   ![image](https://user-images.githubusercontent.com/86735438/219793747-8d532d13-1bae-46fc-b4ab-daf092bb0bfe.png)
 ![image](https://user-images.githubusercontent.com/86735438/219793830-b1eca535-3caa-4bb5-bd03-b7e62b308219.png)
