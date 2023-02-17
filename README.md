@@ -1,5 +1,5 @@
 ##                  VSD Mixed-signal PD Research Program - Flash_ADC  
-### <div align="center"> WEEK0 AI's
+## <div align="center"> WEEK0 AI's
 ###                  VSD OPENSOURCE TOOLS INSTALLATION  
 #### Vsdflow creation  
    * sudo apt-get install git  
@@ -133,43 +133,7 @@
 ![image](https://user-images.githubusercontent.com/86735438/219463202-0d7349d2-d6aa-435d-9486-2f1220516c82.png)
 ![image](https://user-images.githubusercontent.com/86735438/219471010-d805927c-c9d3-4d33-8e84-189d0a09767b.png)
 ![image](https://user-images.githubusercontent.com/86735438/218332205-f5a7ba8c-d75a-410b-91b8-1e092f369336.png)  
-## DESIGN 2 - PRELAYOUT SIMULATION  
-    ***Netlist description for prelayout simulation***
-    M1 3 a vdd vdd pmos W=2.125u L=0.25u
-    M2 2 b vdd vdd pmos W=2.125u L=0.25u
-    M3 4 d 2 2 pmos W=2.125u L=0.25u
-    M4 4 c 3 3 pmos W=2.125u L=0.25u
-    M5 out e 4 4 pmos W=2.125u L=0.25u
-    M6 out f 4 4 pmos W=2.125u L=0.25u
-
-    M7 out a 6 6 nmos W=2.125u L=0.25u
-    M8 out c 6 6 nmos W=2.125u L=0.25u
-    M9 out e 7 7 nmos W=2.125u L=0.25u
-    M10 6 b 0 0 nmos W=2.125u L=0.25u
-    M11 6 d 0 0 nmos W=2.125u L=0.25u
-    M12 7 f 0 0 nmos W=2.125u L=0.25u
-
-    cload out 0 10f
-
-    Vdd vdd 0 2.5
-    V1 a 0 0 pulse 0 2.5 0.1n 10p 10p 1n 2n
-    V2 b 0 0 pulse 0 2.5 0.2n 10p 10p 1n 2n
-    V3 c 0 0 pulse 0 2.5 0.3n 10p 10p 1n 2n
-    V4 d 0 0 pulse 0 2.5 0.4n 10p 10p 1n 2n
-    V5 e 0 0 pulse 0 2.5 0.5n 10p 10p 1n 2n
-    V6 f 0 0 pulse 0 2.5 0.6n 10p 10p 1n 2n
-
-    ***Simulation commands***
-    .op
-    .tran 10p 4n
-
-    *** .include model file ***
-    .include my_model_file.mod
-    .end
-
-![image](https://user-images.githubusercontent.com/86735438/218333162-8946d2a4-6636-4382-ad38-fd3bc625098d.png)
-![image](https://user-images.githubusercontent.com/86735438/218333181-a09a474d-571f-45ea-9fc8-afa8a060bc2a.png)
-  
+## <div align="center"> WEEK1 AI's  
 ** INVERTER USING ALIGN
   ![image](https://user-images.githubusercontent.com/86735438/219578385-481cd7de-9958-4b1a-8846-bbf74bc1e92a.png)
 ![image](https://user-images.githubusercontent.com/86735438/219578504-77c43f40-778d-42d6-a613-200218dc60b2.png)
