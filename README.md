@@ -184,6 +184,36 @@
 
 #### modified counter file after optimization
   ![image](https://user-images.githubusercontent.com/86735438/221195871-6110c473-0f3a-428e-8310-44318640768d.png)
+  
+#### Synthesis
+  ![image](https://user-images.githubusercontent.com/86735438/221258463-d6da4ec6-ecfc-48d9-bd71-c6ec76a28a7d.png)
+
+#### Floorplan
+  ![image](https://user-images.githubusercontent.com/86735438/221258636-d48c5b04-1e02-4252-9ce1-f2667517fc7b.png)
+
+#### Floorplan Power report
+  ![image](https://user-images.githubusercontent.com/86735438/221259996-d05e4a79-ec06-402d-92c2-804be88a5100.png)
+
+#### Global Place and Route
+  ![image](https://user-images.githubusercontent.com/86735438/221260137-1db96446-5c93-4fec-b7ff-56908f26e76a.png)
+
+#### Global place Power Report
+  ![image](https://user-images.githubusercontent.com/86735438/221260275-1984b37a-a267-4a2b-bf7e-e7134ac2fcc6.png)
+
+#### Design area
+  ![image](https://user-images.githubusercontent.com/86735438/221260654-ff042ac3-c5b9-4b55-bd7f-515792996907.png)
+
+#### Delay
+  ![image](https://user-images.githubusercontent.com/86735438/221261146-99e376c7-826e-4873-8151-ebd5ebc5c71b.png)
+
+#### DRC
+  ![image](https://user-images.githubusercontent.com/86735438/221261336-278b26dd-746b-4066-bb54-2f28e749f140.png)
+  
+#### SPICE generation
+  ![image](https://user-images.githubusercontent.com/86735438/221261836-04d44b6e-7955-4ced-8c4e-19c475005284.png)
+
+#### LVS
+  ![image](https://user-images.githubusercontent.com/86735438/221262292-79783a7f-c263-41c1-bfa6-ef9c95ffbff0.png)
 
 
 
