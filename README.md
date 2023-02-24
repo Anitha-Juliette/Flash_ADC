@@ -214,6 +214,10 @@
 
 #### LVS
   ![image](https://user-images.githubusercontent.com/86735438/221262292-79783a7f-c263-41c1-bfa6-ef9c95ffbff0.png)
+ 
+#### 6_final.gds
+  ![image](https://user-images.githubusercontent.com/86735438/221264170-4dc7b60a-72c2-4fd3-9437-ea6379a00a84.png)
+
 
 
 
