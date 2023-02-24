@@ -175,8 +175,16 @@
   
 #### test.json
   ![image](https://user-images.githubusercontent.com/86735438/221193664-550e31ff-996e-41b0-9ca9-1c908b356779.png)
+  
 #### modelfile.csv
   ![image](https://user-images.githubusercontent.com/86735438/221194455-75799596-f497-4bb9-a4a2-bb88c09386d8.png)
+
+#### generic verilog file for counter
+  ![image](https://user-images.githubusercontent.com/86735438/221195559-e0db885e-0b08-42a4-a94a-8bdd5cb973a4.png)
+
+#### modified counter file after optimization
+  ![image](https://user-images.githubusercontent.com/86735438/221195871-6110c473-0f3a-428e-8310-44318640768d.png)
+
 
 
 
