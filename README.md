@@ -169,6 +169,16 @@
 #### SLC.gds
 
 ![image](https://user-images.githubusercontent.com/86735438/221184984-cf9bb679-540d-468d-bc8e-62a2a3209e49.png)
+  
+#### Verilog generation  
+  ![image](https://user-images.githubusercontent.com/86735438/221192890-5ae4736e-4fca-47e9-ab55-120d42081367.png)
+  
+#### test.json
+  ![image](https://user-images.githubusercontent.com/86735438/221193664-550e31ff-996e-41b0-9ca9-1c908b356779.png)
+#### modelfile.csv
+  ![image](https://user-images.githubusercontent.com/86735438/221194455-75799596-f497-4bb9-a4a2-bb88c09386d8.png)
+
+
 
 
 
