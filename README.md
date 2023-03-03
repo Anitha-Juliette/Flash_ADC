@@ -222,10 +222,7 @@
 ### Ring Oscillator design using Xschem
 #### 1. Schematic
   ![image](https://user-images.githubusercontent.com/86735438/222793105-99cb285b-1f91-43c7-886d-c2f9b8bf2707.png)
-  `** sch_path: /home/ani/pd_research/week3/analog/xschem/osc.sch
-  **.subckt osc out
-  *.opin out
-  XM1 net1 out VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
+<div XM1 net1 out VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
   + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
   + sa=0 sb=0 sd=0 mult=1 m=1
   XM2 net1 out GND GND sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
@@ -255,6 +252,8 @@
   .GLOBAL VDD
   .GLOBAL GND
   .end `
+  </div>
+
 
 
   
