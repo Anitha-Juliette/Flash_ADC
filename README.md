@@ -260,3 +260,25 @@
         .GLOBAL VDD
         .GLOBAL GND
         .end
+  #### 3. Prelayout simulation of Ring Oscillator
+  ![image](https://user-images.githubusercontent.com/86735438/222804610-dcf37724-9692-4823-ba75-d71ea9c480f4.png)
+  #### 4. osc.sp file : Input to align
+        .subckt osc VDD GND out
+        XM1 net1 out VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=21e-7 nf=10 m=1
+        XM2 net1 out GND GND sky130_fd_pr__nfet_01v8 L=0.15 W=21e-7 nf=10 m=1
+        XM3 net2 net1 VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=21e-7 nf=10 m=1
+        XM4 net2 net1 GND GND sky130_fd_pr__nfet_01v8 L=0.15 W=21e-7 nf=10 m=1
+        XM5 out net2 VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=21e-7 nf=10 m=1
+        XM6 out net2 GND GND sky130_fd_pr__nfet_01v8 L=0.15 W=21e-7 nf=10 m=1
+        .ends
+  #### 5. osc.gds file generation from osc.sp
+  ![image](https://user-images.githubusercontent.com/86735438/222805214-5b7cdb87-ea5a-4143-a93c-bf907882e67c.png)
+  #### 6. Open magic -T command from mag folder
+  ![image](https://user-images.githubusercontent.com/86735438/222805444-ce482e80-13b3-447c-9d33-d880128e2fcb.png)
+  #### 7. Read osc.gds and export osc_0.spice file
+  ![image](https://user-images.githubusercontent.com/86735438/222805727-8193a26c-3a56-4522-9495-1c80a80a3921.png)
+  #### 8. Modify osc_0.spice file with testbench
+  
+
+
+
