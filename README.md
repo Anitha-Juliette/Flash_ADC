@@ -461,6 +461,15 @@
   ![image](https://user-images.githubusercontent.com/86735438/224394641-ce2b9533-cd6c-4a9a-b7f5-00493308a789.png)
 ![image](https://user-images.githubusercontent.com/86735438/224394828-9597bdfd-5a07-4b71-bf7d-300f5a1089aa.png)
 ![image](https://user-images.githubusercontent.com/86735438/224395011-ec8b77e7-036a-44cb-8ecf-5a5b9efcac8d.png)
+#### 8.Schematic - Modified ADC with transistors modelled as resistors
+![image](https://user-images.githubusercontent.com/86735438/224404672-e02c42c4-3944-4c39-b10e-a248b1091198.png)
+
+
+![image](https://user-images.githubusercontent.com/86735438/224405240-35efc3bb-2194-48b5-b92b-9eaf6c682fbe.png)
+![image](https://user-images.githubusercontent.com/86735438/224405331-4a9c9ccc-fa2a-4f52-a0e8-378d84b009b5.png)
+![image](https://user-images.githubusercontent.com/86735438/224405469-6089cff3-8add-49fd-af45-f07df3817cb9.png)
+![image](https://user-images.githubusercontent.com/86735438/224405631-15a8ea8e-4ad1-4b67-83cb-156f7e920224.png)
+
 
 
 
