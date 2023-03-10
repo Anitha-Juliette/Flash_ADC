@@ -455,6 +455,14 @@
 ![image](https://user-images.githubusercontent.com/86735438/224357261-452b3f04-0972-42df-b5d6-3e5e166677fa.png)
 ![image](https://user-images.githubusercontent.com/86735438/224357334-e4b12fa6-13ba-4ba4-aed1-517ce9df1c7a.png)
 ![image](https://user-images.githubusercontent.com/86735438/224357406-6f128b93-2569-4aba-9633-667254e65812.png)
+#### Issue : Not able to instantiate resistor in schematictolayout- align process.
+#### Temp solution: Instead of resistor, a Gate-Source shorted pmos transistor is used - linear region of operation - resistive region of operation.
+![image](https://user-images.githubusercontent.com/86735438/224391324-d118ed38-30f4-4114-8fa3-36cb897c5316.png)
+  ![image](https://user-images.githubusercontent.com/86735438/224394641-ce2b9533-cd6c-4a9a-b7f5-00493308a789.png)
+![image](https://user-images.githubusercontent.com/86735438/224394828-9597bdfd-5a07-4b71-bf7d-300f5a1089aa.png)
+![image](https://user-images.githubusercontent.com/86735438/224395011-ec8b77e7-036a-44cb-8ecf-5a5b9efcac8d.png)
+
+
 
 
 
