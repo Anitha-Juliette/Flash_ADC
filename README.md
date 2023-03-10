@@ -391,13 +391,49 @@
         plot v(out2)
         .endc
         .end
-  #### 3. Opamp - inputs & outputs
+#### 3. Opamp - inputs & outputs
   ![image](https://user-images.githubusercontent.com/86735438/224351012-752df467-a0ed-4555-a866-fcb777b318a4.png)
 ![image](https://user-images.githubusercontent.com/86735438/224351121-aa3c17bc-ec1f-441e-915a-045cdeb6124c.png)
 ![image](https://user-images.githubusercontent.com/86735438/224351217-2649e526-8eb8-444b-acad-a90c8f77a0c3.png)
-  #### 4. Schematic - ADC
+#### 4. Opamp - Differential Gain - Spice file & output  
+        .lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+        XM1 net1 net1 Vdd Vdd sky130_fd_pr__pfet_01v8 L=1 W=4 nf=1 m=1
+        XM3 net1 Vm net2 net2 sky130_fd_pr__nfet_01v8 L=1 W=2 nf=1 m=1
+        XM4 Out1 Vp net2 net2 sky130_fd_pr__nfet_01v8 L=1 W=2 nf=1 m=1
+        XM5 net2 Vint Vss Vss sky130_fd_pr__nfet_01v8 L=1 W=2 nf=1 m=1
+        XM6 Vint Vint Vss Vss sky130_fd_pr__nfet_01v8 L=1 W=2 nf=1 m=1
+        XR1 Vint Vdd GND sky130_fd_pr__res_xhigh_po_0p69 L=100 mult=1 m=1
+        XM7 Out1 net1 Vdd Vdd sky130_fd_pr__pfet_01v8 L=1 W=4 nf=1 m=1
+        XM8 out2 Out1 Vdd Vdd sky130_fd_pr__pfet_01v8 L=1 W=4 nf=1 m=1
+        XM9 out2 Vint Vss Vss sky130_fd_pr__nfet_01v8 L=1 W=2 nf=1 m=1
+        V1 Vdd GND dc 1.8
+        V2 Vss GND dc -1.8
+
+        V3 Vm gnd ac 1
+        V4 Vp gnd dc 0
+
+        .ac dec 101 1 1g
+        .control
+        run
+
+        plot db(V(out2)/V(Vm))
+        plot 180/PI*phase(V(out2))
+
+        let gain = db(V(out2)/V(Vp))
+        let phase = 180/PI*phase(V(out2))
+
+        let max_gain = maximum(gain)
+        print max_gain
+
+        print gain > gain_values.txt
+        print phase > phase_values.txt
+        .endc
+        .end  
+![image](https://user-images.githubusercontent.com/86735438/224377717-2634155b-9e71-41e7-b88c-ef3a001ecbb5.png)
+![image](https://user-images.githubusercontent.com/86735438/224377800-c54fc4b9-6d2d-41ca-b124-f41404568c99.png) 
+#### 5. Schematic - ADC
   ![image](https://user-images.githubusercontent.com/86735438/224352697-75254ade-48f3-4b40-9ea0-a02765f51b8b.png)
-  #### 5. Testing of ADC - ADC.spice
+#### 6. Testing of ADC - ADC.spice
         .lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
         x1 Vdd Out Vref_2 Vin Vss opamp
         XR1 Vref_2 Vref GND sky130_fd_pr__res_xhigh_po_0p69 L=100
@@ -426,7 +462,7 @@
         plot v(out)
         .endc
         .end
- #### 6. ADC - inputs & outputs
+ #### 7. ADC - inputs & outputs
  ![image](https://user-images.githubusercontent.com/86735438/224357165-22335cec-2624-41d4-a4a5-2cc79c441842.png)
 ![image](https://user-images.githubusercontent.com/86735438/224357261-452b3f04-0972-42df-b5d6-3e5e166677fa.png)
 ![image](https://user-images.githubusercontent.com/86735438/224357334-e4b12fa6-13ba-4ba4-aed1-517ce9df1c7a.png)
