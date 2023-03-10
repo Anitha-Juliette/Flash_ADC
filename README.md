@@ -426,6 +426,12 @@
         plot v(out)
         .endc
         .end
+ #### 6. ADC - inputs & outputs
+ ![image](https://user-images.githubusercontent.com/86735438/224357165-22335cec-2624-41d4-a4a5-2cc79c441842.png)
+![image](https://user-images.githubusercontent.com/86735438/224357261-452b3f04-0972-42df-b5d6-3e5e166677fa.png)
+![image](https://user-images.githubusercontent.com/86735438/224357334-e4b12fa6-13ba-4ba4-aed1-517ce9df1c7a.png)
+![image](https://user-images.githubusercontent.com/86735438/224357406-6f128b93-2569-4aba-9633-667254e65812.png)
+
 
 
   
