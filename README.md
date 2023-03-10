@@ -363,7 +363,73 @@
         **** end user architecture code
   #### 9. Align - Post layout simulation waveform
   ![image](https://user-images.githubusercontent.com/86735438/222814049-d228f3f4-7c22-457f-b6bf-cec4bfafb3f2.png)
+## <div align="center"> WEEK4 AI's
+### ANALOG PART - 1 BIT ADC
+  ![image](https://user-images.githubusercontent.com/86735438/224346331-c96e4896-2435-48e9-9844-26ff2c181561.png)
+#### 1. Schematic of Opamp
+  ![image](https://user-images.githubusercontent.com/86735438/224349110-4c73df55-8efd-40bf-95c4-90c84a6405c6.png)
+#### 2. Testing of Opamp - opamp.spice
+        .lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+        XM1 net1 net1 Vdd Vdd sky130_fd_pr__pfet_01v8 L=1 W=4 nf=1 m=1
+        XM3 net1 Vm net2 net2 sky130_fd_pr__nfet_01v8 L=1 W=2 nf=1 m=1
+        XM4 Out1 Vp net2 net2 sky130_fd_pr__nfet_01v8 L=1 W=2 nf=1 m=1
+        XM5 net2 Vint Vss Vss sky130_fd_pr__nfet_01v8 L=1 W=2 nf=1 m=1
+        XM6 Vint Vint Vss Vss sky130_fd_pr__nfet_01v8 L=1 W=2 nf=1 m=1
+        XR1 Vint Vdd GND sky130_fd_pr__res_xhigh_po_0p69 L=100 mult=1 m=1
+        XM7 Out1 net1 Vdd Vdd sky130_fd_pr__pfet_01v8 L=1 W=4 nf=1 m=1
+        XM8 out2 Out1 Vdd Vdd sky130_fd_pr__pfet_01v8 L=1 W=4 nf=1 m=1
+        XM9 out2 Vint Vss Vss sky130_fd_pr__nfet_01v8 L=1 W=2 nf=1 m=1
+        V1 Vdd GND dc 1.8
+        V2 Vss GND dc -1.8
+        V3 Vp GND sine(0 1 60)
+        V4 Vm GND sine(0 -1 60)
+        .tran 1m 0.1
+        .control
+        run
+        plot v(Vm)
+        plot v(Vp)
+        plot v(out2)
+        .endc
+        .end
+  #### 3. Opamp - inputs & outputs
+  ![image](https://user-images.githubusercontent.com/86735438/224351012-752df467-a0ed-4555-a866-fcb777b318a4.png)
+![image](https://user-images.githubusercontent.com/86735438/224351121-aa3c17bc-ec1f-441e-915a-045cdeb6124c.png)
+![image](https://user-images.githubusercontent.com/86735438/224351217-2649e526-8eb8-444b-acad-a90c8f77a0c3.png)
+  #### 4. Schematic - ADC
+  ![image](https://user-images.githubusercontent.com/86735438/224352697-75254ade-48f3-4b40-9ea0-a02765f51b8b.png)
+  #### 5. Testing of ADC - ADC.spice
+        .lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+        x1 Vdd Out Vref_2 Vin Vss opamp
+        XR1 Vref_2 Vref GND sky130_fd_pr__res_xhigh_po_0p69 L=100
+        XR2 GND Vref_2 GND sky130_fd_pr__res_xhigh_po_0p69 L=100
+        .subckt opamp Vdd out2 Vm Vp Vss
+        XM1 net1 net1 Vdd Vdd sky130_fd_pr__pfet_01v8 L=1 W=4 nf=1
+        XM3 net1 Vm net2 net2 sky130_fd_pr__nfet_01v8 L=1 W=2 nf=1
+        XM4 Out1 Vp net2 net2 sky130_fd_pr__nfet_01v8 L=1 W=2 nf=1
+        XM5 net2 Vref Vss Vss sky130_fd_pr__nfet_01v8 L=1 W=2 nf=1
+        XM6 Vref Vref Vss Vss sky130_fd_pr__nfet_01v8 L=1 W=2 nf=1
+        XR3 Vref Vdd GND sky130_fd_pr__res_xhigh_po_0p69 L=100
+        XM7 Out1 net1 Vdd Vdd sky130_fd_pr__pfet_01v8 L=1 W=4 nf=1
+        XM8 out2 Out1 Vdd Vdd sky130_fd_pr__pfet_01v8 L=1 W=4 nf=1
+        XM9 out2 Vref Vss Vss sky130_fd_pr__nfet_01v8 L=1 W=2 nf=1
+        .ends
+        V1 Vdd GND dc 1.8
+        V2 Vss GND dc -1.8
+        V3 Vin GND sine(0 1.8 60)
+        V4 Vref GND dc 1
+        .tran 1m 0.1
+        .control
+        run
+        plot v(Vin)
+        plot v(Vref)
+        plot v(Vref_2)
+        plot v(out)
+        .endc
+        .end
 
+
+  
+  
   
 
 
