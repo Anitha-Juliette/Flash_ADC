@@ -408,25 +408,13 @@
         XM9 out2 Vint Vss Vss sky130_fd_pr__nfet_01v8 L=1 W=2 nf=1 m=1
         V1 Vdd GND dc 1.8
         V2 Vss GND dc -1.8
-
         V3 Vm gnd ac 1
         V4 Vp gnd dc 0
-
         .ac dec 101 1 1g
         .control
         run
-
         plot db(V(out2)/V(Vm))
         plot 180/PI*phase(V(out2))
-
-        let gain = db(V(out2)/V(Vp))
-        let phase = 180/PI*phase(V(out2))
-
-        let max_gain = maximum(gain)
-        print max_gain
-
-        print gain > gain_values.txt
-        print phase > phase_values.txt
         .endc
         .end  
 ![image](https://user-images.githubusercontent.com/86735438/224377717-2634155b-9e71-41e7-b88c-ef3a001ecbb5.png)
