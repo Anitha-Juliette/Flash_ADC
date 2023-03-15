@@ -423,6 +423,7 @@
         .end        
 #### 3. ADC output - Xschem
   ![image](https://user-images.githubusercontent.com/86735438/225319195-4d019289-cb6c-427b-a923-a993f1e650d4.png)
+#### 4. Layout of 1 bit ADC - generated from Align
 
 
   
