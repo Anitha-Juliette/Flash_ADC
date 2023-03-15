@@ -366,113 +366,63 @@
 ## <div align="center"> WEEK4 AI's
 ### ANALOG PART - 1 BIT ADC
   ![image](https://user-images.githubusercontent.com/86735438/224346331-c96e4896-2435-48e9-9844-26ff2c181561.png)
-#### 1. Schematic of Opamp
-  ![image](https://user-images.githubusercontent.com/86735438/224349110-4c73df55-8efd-40bf-95c4-90c84a6405c6.png)
+#### 1. Schematic of 1 bit ADC using Opamp as Comparator
+  ![image](https://user-images.githubusercontent.com/86735438/225317066-0d3806da-f520-4cfe-9031-82dee7b2644f.png)
 #### 2. Testing of Opamp - opamp.spice
-        .lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
-        XM1 net1 net1 Vdd Vdd sky130_fd_pr__pfet_01v8 L=1 W=4 nf=1 m=1
-        XM3 net1 Vm net2 net2 sky130_fd_pr__nfet_01v8 L=1 W=2 nf=1 m=1
-        XM4 Out1 Vp net2 net2 sky130_fd_pr__nfet_01v8 L=1 W=2 nf=1 m=1
-        XM5 net2 Vint Vss Vss sky130_fd_pr__nfet_01v8 L=1 W=2 nf=1 m=1
-        XM6 Vint Vint Vss Vss sky130_fd_pr__nfet_01v8 L=1 W=2 nf=1 m=1
-        XR1 Vint Vdd GND sky130_fd_pr__res_xhigh_po_0p69 L=100 mult=1 m=1
-        XM7 Out1 net1 Vdd Vdd sky130_fd_pr__pfet_01v8 L=1 W=4 nf=1 m=1
-        XM8 out2 Out1 Vdd Vdd sky130_fd_pr__pfet_01v8 L=1 W=4 nf=1 m=1
-        XM9 out2 Vint Vss Vss sky130_fd_pr__nfet_01v8 L=1 W=2 nf=1 m=1
-        V1 Vdd GND dc 1.8
-        V2 Vss GND dc -1.8
-        V3 Vp GND sine(0 1 60)
-        V4 Vm GND sine(0 -1 60)
+        ** sch_path: /home/ani/pd_research/ADC/xschem/opamp_mod.sch
+**.subckt opamp_mod Vm Vp out2 Vm Vp
+*.ipin Vm
+*.ipin Vp
+*.iopin out2
+*.ipin Vm
+*.ipin Vp
+        XM1 net1 net1 Vdd Vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf *          0.29' as='int((nf+2)/2) * W/nf * 0.29'
+        + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 /         W' nrs='0.29 / W'
+        + sa=0 sb=0 sd=0 mult=1 m=1
+        XM3 net1 Vm net2 net2 sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf *          0.29' as='int((nf+2)/2) * W/nf * 0.29'
+        + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 /         W' nrs='0.29 / W'
+        + sa=0 sb=0 sd=0 mult=1 m=1
+        XM4 Out1 Vp net2 net2 sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf *        0.29' as='int((nf+2)/2) * W/nf * 0.29'
+        + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 /        W' nrs='0.29 / W'
+        + sa=0 sb=0 sd=0 mult=1 m=1
+        XM5 net2 Vint Vss Vss sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf *        0.29' as='int((nf+2)/2) * W/nf * 0.29'
+        + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 /         W' nrs='0.29 / W'
+        + sa=0 sb=0 sd=0 mult=1 m=1
+        XM6 Vint Vint Vss Vss sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf *        0.29' as='int((nf+2)/2) * W/nf * 0.29'
+        + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 /         W' nrs='0.29 / W'
+        + sa=0 sb=0 sd=0 mult=1 m=1
+        XM7 Out1 net1 Vdd Vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf *        0.29' as='int((nf+2)/2) * W/nf * 0.29'
+        + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 /         W' nrs='0.29 / W'
+        + sa=0 sb=0 sd=0 mult=1 m=1
+        XM8 out2 Out1 Vdd Vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf *        0.29' as='int((nf+2)/2) * W/nf * 0.29'
+        + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 /         W' nrs='0.29 / W'
+        + sa=0 sb=0 sd=0 mult=1 m=1
+        XM9 out2 Vint Vss Vss sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf *          0.29' as='int((nf+2)/2) * W/nf * 0.29'
+        + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 /         W' nrs='0.29 / W'
+        + sa=0 sb=0 sd=0 mult=1 m=1
+        XM2 Vint Vdd Vdd Vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf *         0.29' as='int((nf+2)/2) * W/nf * 0.29'
+        + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 /         W' nrs='0.29 / W'
+        + sa=0 sb=0 sd=0 mult=1 m=1
+        V1 Vdd GND 1.8
+        .save i(v1)
+        V2 Vss GND -1.8
+        .save i(v2)
+        V3 Vm GND 0.6
+        .save i(v3)
+        V4 Vp GND sine(0 1 60)
+        .save i(v4)
+        **** begin user architecture code
+
         .tran 1m 0.1
-        .control
-        run
-        plot v(Vm)
-        plot v(Vp)
-        plot v(out2)
-        .endc
-        .end
-#### 3. Opamp - inputs & outputs
-  ![image](https://user-images.githubusercontent.com/86735438/224351012-752df467-a0ed-4555-a866-fcb777b318a4.png)
-![image](https://user-images.githubusercontent.com/86735438/224351121-aa3c17bc-ec1f-441e-915a-045cdeb6124c.png)
-![image](https://user-images.githubusercontent.com/86735438/224351217-2649e526-8eb8-444b-acad-a90c8f77a0c3.png)
-#### 4. Opamp - Differential Gain - Spice file & output  
         .lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
-        XM1 net1 net1 Vdd Vdd sky130_fd_pr__pfet_01v8 L=1 W=4 nf=1 m=1
-        XM3 net1 Vm net2 net2 sky130_fd_pr__nfet_01v8 L=1 W=2 nf=1 m=1
-        XM4 Out1 Vp net2 net2 sky130_fd_pr__nfet_01v8 L=1 W=2 nf=1 m=1
-        XM5 net2 Vint Vss Vss sky130_fd_pr__nfet_01v8 L=1 W=2 nf=1 m=1
-        XM6 Vint Vint Vss Vss sky130_fd_pr__nfet_01v8 L=1 W=2 nf=1 m=1
-        XR1 Vint Vdd GND sky130_fd_pr__res_xhigh_po_0p69 L=100 mult=1 m=1
-        XM7 Out1 net1 Vdd Vdd sky130_fd_pr__pfet_01v8 L=1 W=4 nf=1 m=1
-        XM8 out2 Out1 Vdd Vdd sky130_fd_pr__pfet_01v8 L=1 W=4 nf=1 m=1
-        XM9 out2 Vint Vss Vss sky130_fd_pr__nfet_01v8 L=1 W=2 nf=1 m=1
-        V1 Vdd GND dc 1.8
-        V2 Vss GND dc -1.8
-        V3 Vm gnd ac 1
-        V4 Vp gnd dc 0
-        .ac dec 101 1 1g
-        .control
-        run
-        plot db(V(out2)/V(Vm))
-        plot 180/PI*phase(V(out2))
-        .endc
-        .end  
-![image](https://user-images.githubusercontent.com/86735438/224377717-2634155b-9e71-41e7-b88c-ef3a001ecbb5.png)
-![image](https://user-images.githubusercontent.com/86735438/224377800-c54fc4b9-6d2d-41ca-b124-f41404568c99.png) 
-#### 5. Schematic - ADC
-  ![image](https://user-images.githubusercontent.com/86735438/224352697-75254ade-48f3-4b40-9ea0-a02765f51b8b.png)
-#### 6. Testing of ADC - ADC.spice
-        .lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
-        x1 Vdd Out Vref_2 Vin Vss opamp
-        XR1 Vref_2 Vref GND sky130_fd_pr__res_xhigh_po_0p69 L=100
-        XR2 GND Vref_2 GND sky130_fd_pr__res_xhigh_po_0p69 L=100
-        .subckt opamp Vdd out2 Vm Vp Vss
-        XM1 net1 net1 Vdd Vdd sky130_fd_pr__pfet_01v8 L=1 W=4 nf=1
-        XM3 net1 Vm net2 net2 sky130_fd_pr__nfet_01v8 L=1 W=2 nf=1
-        XM4 Out1 Vp net2 net2 sky130_fd_pr__nfet_01v8 L=1 W=2 nf=1
-        XM5 net2 Vref Vss Vss sky130_fd_pr__nfet_01v8 L=1 W=2 nf=1
-        XM6 Vref Vref Vss Vss sky130_fd_pr__nfet_01v8 L=1 W=2 nf=1
-        XR3 Vref Vdd GND sky130_fd_pr__res_xhigh_po_0p69 L=100
-        XM7 Out1 net1 Vdd Vdd sky130_fd_pr__pfet_01v8 L=1 W=4 nf=1
-        XM8 out2 Out1 Vdd Vdd sky130_fd_pr__pfet_01v8 L=1 W=4 nf=1
-        XM9 out2 Vref Vss Vss sky130_fd_pr__nfet_01v8 L=1 W=2 nf=1
-        .ends
-        V1 Vdd GND dc 1.8
-        V2 Vss GND dc -1.8
-        V3 Vin GND sine(0 1.8 60)
-        V4 Vref GND dc 1
-        .tran 1m 0.1
-        .control
-        run
-        plot v(Vin)
-        plot v(Vref)
-        plot v(Vref_2)
-        plot v(out)
-        .endc
+        .save all
+
+        **** end user architecture code
+        **.ends
+        .GLOBAL GND
         .end
- #### 7. ADC - inputs & outputs
- ![image](https://user-images.githubusercontent.com/86735438/224357165-22335cec-2624-41d4-a4a5-2cc79c441842.png)
-![image](https://user-images.githubusercontent.com/86735438/224357261-452b3f04-0972-42df-b5d6-3e5e166677fa.png)
-![image](https://user-images.githubusercontent.com/86735438/224357334-e4b12fa6-13ba-4ba4-aed1-517ce9df1c7a.png)
-![image](https://user-images.githubusercontent.com/86735438/224357406-6f128b93-2569-4aba-9633-667254e65812.png)
-#### Issue : Not able to instantiate resistor in schematictolayout- align process.
-#### Temp solution: Instead of resistor, a Gate-Source shorted pmos transistor is used - linear region of operation - resistive region of operation.
-![image](https://user-images.githubusercontent.com/86735438/224391324-d118ed38-30f4-4114-8fa3-36cb897c5316.png)
-  ![image](https://user-images.githubusercontent.com/86735438/224394641-ce2b9533-cd6c-4a9a-b7f5-00493308a789.png)
-![image](https://user-images.githubusercontent.com/86735438/224394828-9597bdfd-5a07-4b71-bf7d-300f5a1089aa.png)
-![image](https://user-images.githubusercontent.com/86735438/224395011-ec8b77e7-036a-44cb-8ecf-5a5b9efcac8d.png)
-#### 8.Schematic - Modified ADC with transistors modelled as resistors
-![image](https://user-images.githubusercontent.com/86735438/224404672-e02c42c4-3944-4c39-b10e-a248b1091198.png)
-
-
-![image](https://user-images.githubusercontent.com/86735438/224405240-35efc3bb-2194-48b5-b92b-9eaf6c682fbe.png)
-![image](https://user-images.githubusercontent.com/86735438/224405331-4a9c9ccc-fa2a-4f52-a0e8-378d84b009b5.png)
-![image](https://user-images.githubusercontent.com/86735438/224405469-6089cff3-8add-49fd-af45-f07df3817cb9.png)
-![image](https://user-images.githubusercontent.com/86735438/224405631-15a8ea8e-4ad1-4b67-83cb-156f7e920224.png)
-
-
-
-
+  #### 3. ADC output - Xschem
+  ![image](https://user-images.githubusercontent.com/86735438/225319195-4d019289-cb6c-427b-a923-a993f1e650d4.png)
 
 
   
