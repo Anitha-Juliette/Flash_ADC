@@ -423,8 +423,20 @@
         .end        
 #### 3. ADC output - Xschem
   ![image](https://user-images.githubusercontent.com/86735438/225319195-4d019289-cb6c-427b-a923-a993f1e650d4.png)
-#### 4. Layout of 1 bit ADC - generated from Align
-
+#### 4. Modified Spice file .sp given as input to align Layout of 1 bit ADC - generated from Align
+        .subckt opamp_mod Vm Vp out2 Vdd Vss
+        XM1 net1 net1 Vdd Vdd sky130_fd_pr__pfet_01v8 w=21e-7 l=150e-9
+        XM2 net1 Vm net2 net2 sky130_fd_pr__nfet_01v8 w=21e-7 l=150e-9 m=4
+        XM3 Out1 Vp net2 net2 sky130_fd_pr__nfet_01v8 w=21e-7 l=150e-9 m=8
+        XM4 net2 Vint Vss Vss sky130_fd_pr__nfet_01v8 w=21e-7 l=150e-9
+        XM5 Vint Vint Vss Vss sky130_fd_pr__nfet_01v8 w=21e-7 l=150e-9
+        XM6 Out1 net1 Vdd Vdd sky130_fd_pr__pfet_01v8 w=21e-7 l=150e-9
+        XM7 out2 Out1 Vdd Vdd sky130_fd_pr__pfet_01v8 w=21e-7 l=150e-9
+        XM8 out2 Vint Vss Vss sky130_fd_pr__nfet_01v8 w=21e-7 l=150e-9
+        XM9 Vint Vdd Vdd Vdd sky130_fd_pr__pfet_01v8 w=21e-7 l=150e-9
+        .end
+#### 5. Layout of 1 bit ADC - generated from Align
+  
 
   
   
