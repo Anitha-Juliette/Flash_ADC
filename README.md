@@ -370,38 +370,38 @@
   ![image](https://user-images.githubusercontent.com/86735438/225317066-0d3806da-f520-4cfe-9031-82dee7b2644f.png)
 #### 2. Testing of Opamp - opamp.spice
         ** sch_path: /home/ani/pd_research/ADC/xschem/opamp_mod.sch
-**.subckt opamp_mod Vm Vp out2 Vm Vp
-*.ipin Vm
-*.ipin Vp
-*.iopin out2
-*.ipin Vm
-*.ipin Vp
-        XM1 net1 net1 Vdd Vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf *          0.29' as='int((nf+2)/2) * W/nf * 0.29'
-        + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 /         W' nrs='0.29 / W'
+        **.subckt opamp_mod Vm Vp out2 Vm Vp
+        *.ipin Vm
+        *.ipin Vp
+        *.iopin out2
+        *.ipin Vm
+        *.ipin Vp
+        XM1 net1 net1 Vdd Vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
+        + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
         + sa=0 sb=0 sd=0 mult=1 m=1
-        XM3 net1 Vm net2 net2 sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf *          0.29' as='int((nf+2)/2) * W/nf * 0.29'
-        + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 /         W' nrs='0.29 / W'
+        XM3 net1 Vm net2 net2 sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
+        + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
         + sa=0 sb=0 sd=0 mult=1 m=1
-        XM4 Out1 Vp net2 net2 sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf *        0.29' as='int((nf+2)/2) * W/nf * 0.29'
-        + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 /        W' nrs='0.29 / W'
+        XM4 Out1 Vp net2 net2 sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
+        + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
         + sa=0 sb=0 sd=0 mult=1 m=1
-        XM5 net2 Vint Vss Vss sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf *        0.29' as='int((nf+2)/2) * W/nf * 0.29'
-        + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 /         W' nrs='0.29 / W'
+        XM5 net2 Vint Vss Vss sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
+        + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
         + sa=0 sb=0 sd=0 mult=1 m=1
-        XM6 Vint Vint Vss Vss sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf *        0.29' as='int((nf+2)/2) * W/nf * 0.29'
-        + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 /         W' nrs='0.29 / W'
+        XM6 Vint Vint Vss Vss sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
+        + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
         + sa=0 sb=0 sd=0 mult=1 m=1
-        XM7 Out1 net1 Vdd Vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf *        0.29' as='int((nf+2)/2) * W/nf * 0.29'
-        + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 /         W' nrs='0.29 / W'
+        XM7 Out1 net1 Vdd Vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
+        + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
         + sa=0 sb=0 sd=0 mult=1 m=1
-        XM8 out2 Out1 Vdd Vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf *        0.29' as='int((nf+2)/2) * W/nf * 0.29'
-        + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 /         W' nrs='0.29 / W'
+        XM8 out2 Out1 Vdd Vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
+        + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
         + sa=0 sb=0 sd=0 mult=1 m=1
-        XM9 out2 Vint Vss Vss sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf *          0.29' as='int((nf+2)/2) * W/nf * 0.29'
-        + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 /         W' nrs='0.29 / W'
+        XM9 out2 Vint Vss Vss sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
+        + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
         + sa=0 sb=0 sd=0 mult=1 m=1
-        XM2 Vint Vdd Vdd Vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf *         0.29' as='int((nf+2)/2) * W/nf * 0.29'
-        + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 /         W' nrs='0.29 / W'
+        XM2 Vint Vdd Vdd Vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
+        + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
         + sa=0 sb=0 sd=0 mult=1 m=1
         V1 Vdd GND 1.8
         .save i(v1)
@@ -420,8 +420,8 @@
         **** end user architecture code
         **.ends
         .GLOBAL GND
-        .end
-  #### 3. ADC output - Xschem
+        .end        
+#### 3. ADC output - Xschem
   ![image](https://user-images.githubusercontent.com/86735438/225319195-4d019289-cb6c-427b-a923-a993f1e650d4.png)
 
 
