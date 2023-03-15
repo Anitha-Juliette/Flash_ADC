@@ -436,6 +436,8 @@
         XM9 Vint Vdd Vdd Vdd sky130_fd_pr__pfet_01v8 w=21e-7 l=150e-9
         .end
 #### 5. Layout of 1 bit ADC - generated from Align
+![image](https://user-images.githubusercontent.com/86735438/225376162-83f41ea8-baf8-40a9-bae7-d9eef9c2d1ce.png)
+
   
 
   
