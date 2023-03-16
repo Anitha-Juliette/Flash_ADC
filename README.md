@@ -367,15 +367,12 @@
 ### ANALOG PART - 1 BIT ADC
   ![image](https://user-images.githubusercontent.com/86735438/224346331-c96e4896-2435-48e9-9844-26ff2c181561.png)
 #### 1. Schematic of 1 bit ADC using Opamp as Comparator
-  ![image](https://user-images.githubusercontent.com/86735438/225317066-0d3806da-f520-4cfe-9031-82dee7b2644f.png)
+  ![image](https://user-images.githubusercontent.com/86735438/225648847-a9cf90ba-ee06-4526-aa79-dc6d296f2124.png)
 #### 2. Testing of Opamp - opamp.spice
+<details>
+<summary>Netlist Xschem</summary>
+<br>
         ** sch_path: /home/ani/pd_research/ADC/xschem/opamp_mod.sch
-        **.subckt opamp_mod Vm Vp out2 Vm Vp
-        *.ipin Vm
-        *.ipin Vp
-        *.iopin out2
-        *.ipin Vm
-        *.ipin Vp
         XM1 net1 net1 Vdd Vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
         + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
         + sa=0 sb=0 sd=0 mult=1 m=1
@@ -400,27 +397,29 @@
         XM9 out2 Vint Vss Vss sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
         + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
         + sa=0 sb=0 sd=0 mult=1 m=1
-        XM2 Vint Vdd Vdd Vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
+        XM2 Vint Vint Vdd Vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
         + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
         + sa=0 sb=0 sd=0 mult=1 m=1
         V1 Vdd GND 1.8
         .save i(v1)
-        V2 Vss GND -1.8
+        V2 Vss GND 0
         .save i(v2)
-        V3 Vm GND 0.6
+        V3 Vm GND 1.2
         .save i(v3)
-        V4 Vp GND sine(0 1 60)
+        V4 Vp GND sin(1.5 1.5 50meg 0.5n)
         .save i(v4)
         **** begin user architecture code
 
-        .tran 1m 0.1
+        .tran 4n 100n
         .lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
         .save all
 
         **** end user architecture code
         **.ends
         .GLOBAL GND
-        .end        
+        .end
+</details>
+        
 #### 3. ADC output - Xschem
   ![image](https://user-images.githubusercontent.com/86735438/225319195-4d019289-cb6c-427b-a923-a993f1e650d4.png)
 #### 4. Modified Spice file .sp given as input to align Layout of 1 bit ADC - generated from Align
