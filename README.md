@@ -402,7 +402,7 @@ V4 Vp GND sin(1.5 1.5 50meg 0.5n)
 </details>
         
 #### 3. ADC output - Xschem
-  ![image](https://user-images.githubusercontent.com/86735438/225319195-4d019289-cb6c-427b-a923-a993f1e650d4.png)
+  ![image](https://user-images.githubusercontent.com/86735438/225661449-2c820990-dc26-42f9-bc0a-f45a9cd9c20f.png)
 #### 4. Modified Spice file .sp given as input to align Layout of 1 bit ADC - generated from Align
         .subckt opamp_mod Vm Vp out2 Vdd Vss
         XM1 net1 net1 Vdd Vdd sky130_fd_pr__pfet_01v8 w=21e-7 l=150e-9
