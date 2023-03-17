@@ -417,6 +417,14 @@ V4 Vp GND sin(1.5 1.5 50meg 0.5n)
         .end
 #### 5. Layout of 1 bit ADC - generated from Align
 ![image](https://user-images.githubusercontent.com/86735438/225376162-83f41ea8-baf8-40a9-bae7-d9eef9c2d1ce.png)
+  ![image](https://user-images.githubusercontent.com/86735438/226058362-20d8bc16-2141-4429-9690-c9dfecc88290.png)
+![image](https://user-images.githubusercontent.com/86735438/226061351-3ae491bd-be90-4a1b-a13c-c1d9836bbcf9.png)
+#### The output was always clamped to max voltage even after repeated resizing of W and L value. Hence adopted the ADC Schematic given below:
+  ![image](https://user-images.githubusercontent.com/86735438/226061910-590e0294-9cca-4a89-bedf-921ace507169.png)
+![image](https://user-images.githubusercontent.com/86735438/226062159-7717ca41-9b08-4352-b1e7-300476f45ea9.png)
+![image](https://user-images.githubusercontent.com/86735438/226062469-211dd744-3311-45bc-98e9-dfb8a4bb5a9f.png)
+
+
 
   
 
