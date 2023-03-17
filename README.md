@@ -423,6 +423,9 @@ V4 Vp GND sin(1.5 1.5 50meg 0.5n)
   ![image](https://user-images.githubusercontent.com/86735438/226061910-590e0294-9cca-4a89-bedf-921ace507169.png)
 ![image](https://user-images.githubusercontent.com/86735438/226062159-7717ca41-9b08-4352-b1e7-300476f45ea9.png)
 ![image](https://user-images.githubusercontent.com/86735438/226062469-211dd744-3311-45bc-98e9-dfb8a4bb5a9f.png)
+  #### Schematic of ADc with Ring Oscillator
+  ![image](https://user-images.githubusercontent.com/86735438/226070596-7e39be40-164e-4f47-9b9a-611ca9c0037b.png)
+
 
 
 
