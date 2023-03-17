@@ -363,7 +363,7 @@
         **** end user architecture code
   #### 9. Align - Post layout simulation waveform
   ![image](https://user-images.githubusercontent.com/86735438/222814049-d228f3f4-7c22-457f-b6bf-cec4bfafb3f2.png)
-## <div align="center"> WEEK4 AI's
+## <div align="center"> WEEK4 & WEEK5 AI's
 ### ANALOG PART - 1 BIT ADC
   ![image](https://user-images.githubusercontent.com/86735438/224346331-c96e4896-2435-48e9-9844-26ff2c181561.png)
 #### 1. Schematic of 1 bit ADC using Opamp as Comparator
