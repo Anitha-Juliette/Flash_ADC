@@ -367,33 +367,66 @@
 ### ANALOG PART - 1 BIT ADC
   ![image](https://user-images.githubusercontent.com/86735438/224346331-c96e4896-2435-48e9-9844-26ff2c181561.png)
 #### 1. Schematic of 1 bit ADC using Opamp as Comparator
-  ![image](https://user-images.githubusercontent.com/86735438/225648847-a9cf90ba-ee06-4526-aa79-dc6d296f2124.png)
+  ![image](https://user-images.githubusercontent.com/86735438/227016970-ca0f19b9-294d-41e5-a317-8e2818df265e.png)
 #### 2. Testing of Opamp - opamp.spice
 <details>
 <summary>Netlist Xschem</summary>
-<pre>$ XM1 net1 net1 Vdd Vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'+ sa=0 sb=0 sd=0 mult=1 m=1
-XM3 net1 Vm net2 net2 sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' + sa=0 sb=0 sd=0 mult=1 m=1
-XM4 Out1 Vp net2 net2 sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'+ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' + sa=0 sb=0 sd=0 mult=1 m=1 
-XM5 net2 Vint Vss Vss sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' + sa=0 sb=0 sd=0 mult=1 m=1
-XM6 Vint Vint Vss Vss sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' + sa=0 sb=0 sd=0 mult=1 m=1
-XM7 Out1 net1 Vdd Vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' + sa=0 sb=0 sd=0 mult=1 m=1
-XM8 out2 Out1 Vdd Vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' + sa=0 sb=0 sd=0 mult=1 m=1 
-XM9 out2 Vint Vss Vss sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' + sa=0 sb=0 sd=0 mult=1 m=1
-XM2 Vint Vint Vdd Vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'+ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' + sa=0 sb=0 sd=0 mult=1 m=1
-V1 Vdd GND 1.8
-.save i(v1)
-V2 Vss GND 0
+<pre>** sch_path: /home/ani/ALIGN-public/examples/opamp_mod/xschem/opamp_mod.sch
+**.subckt opamp_mod OUT VDD GND INP INN BIAS
+*.opin OUT
+*.iopin VDD
+*.iopin GND
+*.ipin INP
+*.ipin INN
+*.iopin BIAS
+V2 VDD GND 1.8
 .save i(v2)
-V3 Vm GND 1.2
+V3 INN GND 1
 .save i(v3)
-V4 Vp GND sin(1.5 1.5 50meg 0.5n)
+V4 INP GND sine(0 1.8 100000000)
 .save i(v4)
+XM1 net1 net1 VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=0.84 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM2 net2 net1 VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=0.84 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM3 net1 INN net3 GND sky130_fd_pr__nfet_01v8 L=0.15 W=0.84 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM4 net2 INP net3 GND sky130_fd_pr__nfet_01v8 L=0.15 W=0.84 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM5 net3 BIAS GND GND sky130_fd_pr__nfet_01v8 L=0.15 W=0.84 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+V1 BIAS GND 0.9
+.save i(v1)
+XM6 net4 net2 VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=0.84 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM7 net4 net2 GND GND sky130_fd_pr__nfet_01v8 L=0.15 W=0.84 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM8 net5 net4 VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=0.84 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM9 net5 net4 GND GND sky130_fd_pr__nfet_01v8 L=0.15 W=0.84 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM10 OUT net5 VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=0.84 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM11 OUT net5 GND GND sky130_fd_pr__nfet_01v8 L=0.15 W=0.84 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
 **** begin user architecture code
-
-.tran 4n 100n
-.lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
-.save all
-
+.lib ~/open_pdks/sources/sky130-pdk/libraries/sky130_fd_pr/latest/models/sky130.lib.spice tt
+*.options savecurrents
+.control
+tran 0.1n 100n
+plot v(out) v(inp)
+.endc
 **** end user architecture code
 **.ends
 .GLOBAL GND
@@ -402,27 +435,197 @@ V4 Vp GND sin(1.5 1.5 50meg 0.5n)
 </details>
         
 #### 3. ADC output - Xschem
-  ![image](https://user-images.githubusercontent.com/86735438/225661449-2c820990-dc26-42f9-bc0a-f45a9cd9c20f.png)
+  ![image](https://user-images.githubusercontent.com/86735438/227015271-6c02eaa8-ec78-47ab-bb56-dc476456b0b6.png)
 #### 4. Modified Spice file .sp given as input to align Layout of 1 bit ADC - generated from Align
-        .subckt opamp_mod Vm Vp out2 Vdd Vss
-        XM1 net1 net1 Vdd Vdd sky130_fd_pr__pfet_01v8 w=21e-7 l=150e-9
-        XM2 net1 Vm net2 net2 sky130_fd_pr__nfet_01v8 w=21e-7 l=150e-9 m=4
-        XM3 Out1 Vp net2 net2 sky130_fd_pr__nfet_01v8 w=21e-7 l=150e-9 m=8
-        XM4 net2 Vint Vss Vss sky130_fd_pr__nfet_01v8 w=21e-7 l=150e-9
-        XM5 Vint Vint Vss Vss sky130_fd_pr__nfet_01v8 w=21e-7 l=150e-9
-        XM6 Out1 net1 Vdd Vdd sky130_fd_pr__pfet_01v8 w=21e-7 l=150e-9
-        XM7 out2 Out1 Vdd Vdd sky130_fd_pr__pfet_01v8 w=21e-7 l=150e-9
-        XM8 out2 Vint Vss Vss sky130_fd_pr__nfet_01v8 w=21e-7 l=150e-9
-        XM9 Vint Vdd Vdd Vdd sky130_fd_pr__pfet_01v8 w=21e-7 l=150e-9
-        .end
+        .subckt opamp_mod INN INP BIAS OUT VDD GND
+        M1 net1 INN net3 net3 sky130_fd_pr__nfet_01v8 L=150e-9 W=8.4e-7 nf=2 m=1
+        M2 net2 INP net3 GND sky130_fd_pr__nfet_01v8 L=150e-9 W=8.4e-7 nf=2 m=1
+        M3 net3 BIAS GND GND sky130_fd_pr__nfet_01v8 L=150e-9 W=8.4e-7 nf=2 m=1
+        M4 net4 net2 GND GND sky130_fd_pr__nfet_01v8 L=150e-9 W=8.4e-7 nf=2 m=1
+        M5 net5 net4 GND GND sky130_fd_pr__nfet_01v8 L=150e-9 W=8.4e-7 nf=2 m=1
+        M6 OUT net5 GND GND sky130_fd_pr__nfet_01v8 L=150e-9 W=8.4e-7 nf=2 m=1
+        M7 net1 net1 VDD VDD sky130_fd_pr__pfet_01v8 L=150e-9 W=8.4e-7 nf=2 m=1
+        M8 net2 net1 VDD VDD sky130_fd_pr__pfet_01v8 L=150e-9 W=8.4e-7 nf=2 m=1
+        M9 net4 net2 VDD VDD sky130_fd_pr__pfet_01v8 L=150e-9 W=8.4e-7 nf=2 m=1
+        M10 net5 net4 VDD VDD sky130_fd_pr__pfet_01v8 L=150e-9 W=8.4e-7 nf=2 m=1
+        M11 OUT net5 VDD VDD sky130_fd_pr__pfet_01v8 L=150e-9 W=8.4e-7 nf=2 m=1
+        .ends opamp_mod
 #### 5. Layout of 1 bit ADC - generated from Align
 ![image](https://user-images.githubusercontent.com/86735438/225376162-83f41ea8-baf8-40a9-bae7-d9eef9c2d1ce.png)
   ![image](https://user-images.githubusercontent.com/86735438/226058362-20d8bc16-2141-4429-9690-c9dfecc88290.png)
 ![image](https://user-images.githubusercontent.com/86735438/226061351-3ae491bd-be90-4a1b-a13c-c1d9836bbcf9.png)
-#### The output was always clamped to max voltage even after repeated resizing of W and L value. Hence adopted the ADC Schematic given below:
-  ![image](https://user-images.githubusercontent.com/86735438/226061910-590e0294-9cca-4a89-bedf-921ace507169.png)
-![image](https://user-images.githubusercontent.com/86735438/226062159-7717ca41-9b08-4352-b1e7-300476f45ea9.png)
-![image](https://user-images.githubusercontent.com/86735438/226062469-211dd744-3311-45bc-98e9-dfb8a4bb5a9f.png)
+#### NOTE : The output was always clamped to max voltage as shown below
+  <details>
+<summary>ADC post layout align netlist with control statements</summary>
+<pre>** SPICE3 file created from OPAMP_MOD_0.ext - technology: sky130A
+X1 OUT VDD GND INP INN BIAS OPAMP_MOD_0
+V2 VDD GND 1.8
+V3 INN GND 1
+V4 INP GND sine(0 1.8 100000000)
+V1 BIAS GND 0.9
+.lib ~/open_pdks/sources/sky130-pdk/libraries/sky130_fd_pr/latest/models/sky130.lib.spice tt
+*.options savecurrents
+.control
+tran 0.1n 100n
+plot v(OUT) v(inp)
+.endc
+.subckt OPAMP_MOD_0 OUT VDD GND INP INN BIAS
+X0 li_2039_1495# INP GND GND sky130_fd_pr__nfet_01v8 ad=0.1176 pd=1.12 as=0.2226 ps=2.21 w=0.84 l=0.15
+X1 GND INP li_2039_1495# GND sky130_fd_pr__nfet_01v8 ad=0.2226 pd=2.21 as=0.1176 ps=1.12 w=0.84 l=0.15
+X2 m1_2290_1400# m1_2290_1400# VDD VDD sky130_fd_pr__pfet_01v8 ad=0.1176 pd=1.12 as=0.2226 ps=2.21 w=0.84 l=0.15
+X3 VDD m1_2290_1400# m1_2290_1400# VDD sky130_fd_pr__pfet_01v8 ad=0.1176 pd=1.12 as=0.1176 ps=1.12 w=0.84 l=0.15
+X4 li_2039_1495# m1_2290_1400# VDD VDD sky130_fd_pr__pfet_01v8 ad=0.1176 pd=1.12 as=0.1176 ps=1.12 w=0.84 l=0.15
+X5 VDD m1_2290_1400# li_2039_1495# VDD sky130_fd_pr__pfet_01v8 ad=0.2226 pd=2.21 as=0.1176 ps=1.12 w=0.84 l=0.15
+X6 li_405_1495# STAGE2_INV_89790208_PG0_0_0_1679509285_0/li_405_571# VDD VDD sky130_fd_pr__pfet_01v8 ad=0.1176 pd=1.12 as=0.2226 ps=2.21 w=0.84 l=0.15
+X7 VDD STAGE2_INV_89790208_PG0_0_0_1679509285_0/li_405_571# li_405_1495# VDD sky130_fd_pr__pfet_01v8 ad=0.2226 pd=2.21 as=0.1176 ps=1.12 w=0.84 l=0.15
+X8 STAGE2_INV_89790208_PG0_0_0_1679509285_0/li_405_571# li_2039_1495# VDD VDD sky130_fd_pr__pfet_01v8 ad=0.2352 pd=2.24 as=2.016 ps=19.92 w=0.84 l=0.15
+X9 VDD li_2039_1495# STAGE2_INV_89790208_PG0_0_0_1679509285_0/li_405_571# VDD sky130_fd_pr__pfet_01v8 ad=0 pd=0 as=0 ps=0 w=0.84 l=0.15
+X10 li_405_1495# STAGE2_INV_89790208_PG0_0_0_1679509285_0/li_405_571# GND GND sky130_fd_pr__nfet_01v8 ad=0.1176 pd=1.12 as=0.2226 ps=2.21 w=0.84 l=0.15
+X11 GND STAGE2_INV_89790208_PG0_0_0_1679509285_0/li_405_571# li_405_1495# GND sky130_fd_pr__nfet_01v8 ad=0.2226 pd=2.21 as=0.1176 ps=1.12 w=0.84 l=0.15
+X12 STAGE2_INV_89790208_PG0_0_0_1679509285_0/li_405_571# li_2039_1495# GND GND sky130_fd_pr__nfet_01v8 ad=0.2352 pd=2.24 as=2.9064 ps=28.76 w=0.84 l=0.15
+X13 GND li_2039_1495# STAGE2_INV_89790208_PG0_0_0_1679509285_0/li_405_571# GND sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=0.84 l=0.15
+X14 INV_72761973_PG0_0_0_1679509284_0/m1_140_1400# li_405_1495# GND GND sky130_fd_pr__nfet_01v8 ad=0.1176 pd=1.12 as=0.2226 ps=2.21 w=0.84 l=0.15
+X15 GND li_405_1495# INV_72761973_PG0_0_0_1679509284_0/m1_140_1400# GND sky130_fd_pr__nfet_01v8 ad=0.2226 pd=2.21 as=0.1176 ps=1.12 w=0.84 l=0.15
+X16 INV_72761973_PG0_0_0_1679509284_0/m1_140_1400# li_405_1495# VDD VDD sky130_fd_pr__pfet_01v8 ad=0.1176 pd=1.12 as=0.2226 ps=2.21 w=0.84 l=0.15
+X17 VDD li_405_1495# INV_72761973_PG0_0_0_1679509284_0/m1_140_1400# VDD sky130_fd_pr__pfet_01v8 ad=0.2226 pd=2.21 as=0.1176 ps=1.12 w=0.84 l=0.15
+X18 GND NMOS_S_48172527_X1_Y1_1679509287_0/a_200_252# GND GND sky130_fd_pr__nfet_01v8 ad=0.1176 pd=1.12 as=0.2226 ps=2.21 w=0.84 l=0.15
+X19 GND NMOS_S_48172527_X1_Y1_1679509287_0/a_200_252# GND GND sky130_fd_pr__nfet_01v8 ad=0.2226 pd=2.21 as=0.1176 ps=1.12 w=0.84 l=0.15
+X20 m1_2290_1400# NMOS_S_48172527_X1_Y1_1679509287_1/a_200_252# GND GND sky130_fd_pr__nfet_01v8 ad=0.2352 pd=2.24 as=0 ps=0 w=0.84 l=0.15
+X21 GND NMOS_S_48172527_X1_Y1_1679509287_1/a_200_252# m1_2290_1400# GND sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=0.84 l=0.15
+C0 li_405_1495# STAGE2_INV_89790208_PG0_0_0_1679509285_0/li_405_571# 0.37fF
+C1 INN li_2039_1495# 0.02fF
+C2 INN STAGE2_INV_89790208_PG0_0_0_1679509285_0/li_405_571# 0.00fF
+C3 m1_2290_1400# li_405_1495# 0.00fF
+C4 INN m1_2290_1400# 0.00fF
+C5 INN BIAS 0.05fF
+C6 li_2039_1495# STAGE2_INV_89790208_PG0_0_0_1679509285_0/li_405_571# 0.77fF
+C7 INP li_405_1495# 0.00fF
+C8 VDD INV_72761973_PG0_0_0_1679509284_0/m1_140_1400# 0.79fF
+C9 VDD li_405_1495# 3.19fF
+C10 VDD INN 0.08fF
+C11 m1_2290_1400# li_2039_1495# 0.46fF
+C12 m1_2290_1400# STAGE2_INV_89790208_PG0_0_0_1679509285_0/li_405_571# 0.01fF
+C13 li_2039_1495# BIAS 0.00fF
+C14 li_405_1495# OUT 0.09fF
+C15 m1_2290_1400# BIAS 0.00fF
+C16 INP li_2039_1495# 0.15fF
+C17 INP STAGE2_INV_89790208_PG0_0_0_1679509285_0/li_405_571# 0.00fF
+C18 VDD li_2039_1495# 3.48fF
+C19 VDD STAGE2_INV_89790208_PG0_0_0_1679509285_0/li_405_571# 3.09fF
+C20 INP m1_2290_1400# 0.05fF
+C21 li_2039_1495# OUT 0.00fF
+C22 VDD m1_2290_1400# 2.57fF
+C23 STAGE2_INV_89790208_PG0_0_0_1679509285_0/li_405_571# OUT 0.00fF
+C24 VDD BIAS 0.06fF
+C25 NMOS_S_48172527_X1_Y1_1679509287_1/a_200_252# m1_2290_1400# 0.11fF
+C26 VDD INP 0.07fF
+C27 INV_72761973_PG0_0_0_1679509284_0/m1_140_1400# li_405_1495# 0.31fF
+C28 VDD OUT 0.31fF
+C29 li_2039_1495# li_405_1495# 0.01fF
+C30 BIAS GND 0.02fF
+C31 INN GND 0.04fF
+C32 OUT GND 0.09fF
+C33 li_2039_1495# GND 1.82fF
+C34 m1_2290_1400# GND 0.98fF
+C35 NMOS_S_48172527_X1_Y1_1679509287_1/a_200_252# GND 0.89fF
+C36 NMOS_S_48172527_X1_Y1_1679509287_0/a_200_252# GND 1.00fF
+C37 INV_72761973_PG0_0_0_1679509284_0/m1_140_1400# GND 0.69fF
+C38 li_405_1495# GND 0.53fF
+C39 VDD GND 17.18fF
+C40 STAGE2_INV_89790208_PG0_0_0_1679509285_0/li_405_571# GND 1.29fF
+C41 INP GND 0.85fF
+.ends
+</pre>
+</details>
+###</b>HOW POST LAYOUT WAS MATCHED WITH PRE LAYOUT SIMULATION</b>
+A careful observation of the above netlist showed that INN, BIAS, OUT were not reflected in FET instances. Also the Drain terminal of Bias transistor was connected to GND eventhough it was not as uch in spice.
+A careful modification of netlist to reflect INN, BIAS, OUT and temp(Drain terminal of Bias transistor) was done as shown in the code below:
+<summary> MODIFIED ADC post layout align netlist with control statements</summary>
+<pre>* SPICE3 file created from OPAMP_MOD_0.ext - technology: sky130A
+X1 OUT VDD GND INP INN BIAS OPAMP_MOD_0
+V2 VDD GND 1.8
+V3 INN GND 1
+V4 INP GND sine(0 1.8 100000000)
+V1 BIAS GND 0.9
+.lib ~/open_pdks/sources/sky130-pdk/libraries/sky130_fd_pr/latest/models/sky130.lib.spice tt
+*.options savecurrents
+.control
+tran 0.1n 100n
+plot v(OUT) v(inp)
+.endc
+.subckt OPAMP_MOD_0 OUT VDD GND INP INN BIAS
+X0 li_2039_1495# INP temp GND sky130_fd_pr__nfet_01v8 ad=0.1176 pd=1.12 as=0.2226 ps=2.21 w=0.84 l=0.15
+X1 temp INP li_2039_1495# GND sky130_fd_pr__nfet_01v8 ad=0.2226 pd=2.21 as=0.1176 ps=1.12 w=0.84 l=0.15
+X20 m1_2290_1400# INN temp GND sky130_fd_pr__nfet_01v8 ad=0.2352 pd=2.24 as=0 ps=0 w=0.84 l=0.15
+X21 temp INN m1_2290_1400# GND sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=0.84 l=0.15
+X2 m1_2290_1400# m1_2290_1400# VDD VDD sky130_fd_pr__pfet_01v8 ad=0.1176 pd=1.12 as=0.2226 ps=2.21 w=0.84 l=0.15
+X3 VDD m1_2290_1400# m1_2290_1400# VDD sky130_fd_pr__pfet_01v8 ad=0.1176 pd=1.12 as=0.1176 ps=1.12 w=0.84 l=0.15
+X4 li_2039_1495# m1_2290_1400# VDD VDD sky130_fd_pr__pfet_01v8 ad=0.1176 pd=1.12 as=0.1176 ps=1.12 w=0.84 l=0.15
+X5 VDD m1_2290_1400# li_2039_1495# VDD sky130_fd_pr__pfet_01v8 ad=0.2226 pd=2.21 as=0.1176 ps=1.12 w=0.84 l=0.15
+X8 STAGE2_INV_89790208_PG0_0_0_1679509285_0/li_405_571# li_2039_1495# VDD VDD sky130_fd_pr__pfet_01v8 ad=0.2352 pd=2.24 as=2.016 ps=19.92 w=0.84 l=0.15
+X9 VDD li_2039_1495# STAGE2_INV_89790208_PG0_0_0_1679509285_0/li_405_571# VDD sky130_fd_pr__pfet_01v8 ad=0 pd=0 as=0 ps=0 w=0.84 l=0.15
+X12 STAGE2_INV_89790208_PG0_0_0_1679509285_0/li_405_571# li_2039_1495# GND GND sky130_fd_pr__nfet_01v8 ad=0.2352 pd=2.24 as=2.9064 ps=28.76 w=0.84 l=0.15
+X13 GND li_2039_1495# STAGE2_INV_89790208_PG0_0_0_1679509285_0/li_405_571# GND sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=0.84 l=0.15
+X6 li_405_1495# STAGE2_INV_89790208_PG0_0_0_1679509285_0/li_405_571# VDD VDD sky130_fd_pr__pfet_01v8 ad=0.1176 pd=1.12 as=0.2226 ps=2.21 w=0.84 l=0.15
+X7 VDD STAGE2_INV_89790208_PG0_0_0_1679509285_0/li_405_571# li_405_1495# VDD sky130_fd_pr__pfet_01v8 ad=0.2226 pd=2.21 as=0.1176 ps=1.12 w=0.84 l=0.15
+X10 li_405_1495# STAGE2_INV_89790208_PG0_0_0_1679509285_0/li_405_571# GND GND sky130_fd_pr__nfet_01v8 ad=0.1176 pd=1.12 as=0.2226 ps=2.21 w=0.84 l=0.15
+X11 GND STAGE2_INV_89790208_PG0_0_0_1679509285_0/li_405_571# li_405_1495# GND sky130_fd_pr__nfet_01v8 ad=0.2226 pd=2.21 as=0.1176 ps=1.12 w=0.84 l=0.15
+X16 OUT li_405_1495# VDD VDD sky130_fd_pr__pfet_01v8 ad=0.1176 pd=1.12 as=0.2226 ps=2.21 w=0.84 l=0.15
+X17 VDD li_405_1495# OUT VDD sky130_fd_pr__pfet_01v8 ad=0.2226 pd=2.21 as=0.1176 ps=1.12 w=0.84 l=0.15
+X14 OUT li_405_1495# GND GND sky130_fd_pr__nfet_01v8 ad=0.1176 pd=1.12 as=0.2226 ps=2.21 w=0.84 l=0.15
+X15 GND li_405_1495# OUT GND sky130_fd_pr__nfet_01v8 ad=0.2226 pd=2.21 as=0.1176 ps=1.12 w=0.84 l=0.15
+X18 temp BIAS GND GND sky130_fd_pr__nfet_01v8 ad=0.1176 pd=1.12 as=0.2226 ps=2.21 w=0.84 l=0.15
+X19 temp BIAS GND GND sky130_fd_pr__nfet_01v8 ad=0.2226 pd=2.21 as=0.1176 ps=1.12 w=0.84 l=0.15
+C0 m1_2290_1400# BIAS 0.00fF
+C1 INN BIAS 0.05fF
+C2 VDD OUT 0.79fF
+C3 li_405_1495# OUT 0.31fF
+C4 m1_2290_1400# INP 0.05fF
+C5 STAGE2_INV_89790208_PG0_0_0_1679509285_0/li_405_571# INP 0.00fF
+C6 li_405_1495# VDD 3.19fF
+C7 VDD BIAS 0.06fF
+C8 m1_2290_1400# li_2039_1495# 0.46fF
+C9 INP VDD 0.07fF
+C10 INN li_2039_1495# 0.02fF
+C11 STAGE2_INV_89790208_PG0_0_0_1679509285_0/li_405_571# li_2039_1495# 0.77fF
+C12 li_405_1495# INP 0.00fF
+C13 OUT li_2039_1495# 0.00fF
+C14 NMOS_S_48172527_X1_Y1_1679509287_1/a_200_252# m1_2290_1400# 0.11fF
+C15 m1_2290_1400# INN 0.00fF
+C16 m1_2290_1400# STAGE2_INV_89790208_PG0_0_0_1679509285_0/li_405_571# 0.01fF
+C17 STAGE2_INV_89790208_PG0_0_0_1679509285_0/li_405_571# INN 0.00fF
+C18 OUT STAGE2_INV_89790208_PG0_0_0_1679509285_0/li_405_571# 0.00fF
+C19 li_2039_1495# VDD 3.48fF
+C20 li_405_1495# li_2039_1495# 0.01fF
+C21 li_2039_1495# BIAS 0.00fF
+C22 m1_2290_1400# VDD 2.57fF
+C23 INN VDD 0.08fF
+C24 STAGE2_INV_89790208_PG0_0_0_1679509285_0/li_405_571# VDD 3.09fF
+C25 li_405_1495# m1_2290_1400# 0.00fF
+C26 OUT VDD 0.31fF
+C27 INP li_2039_1495# 0.15fF
+C28 li_405_1495# STAGE2_INV_89790208_PG0_0_0_1679509285_0/li_405_571# 0.37fF
+C29 OUT li_405_1495# 0.09fF
+C30 BIAS GND 0.02fF
+C31 INN GND 0.04fF
+C32 OUT GND 0.09fF
+C33 li_2039_1495# GND 1.82fF
+C34 m1_2290_1400# GND 0.98fF
+C35 NMOS_S_48172527_X1_Y1_1679509287_1/a_200_252# GND 0.89fF
+C36 BIAS GND 1.00fF
+C37 OUT GND 0.69fF
+C38 li_405_1495# GND 0.53fF
+C39 VDD GND 17.18fF
+C40 STAGE2_INV_89790208_PG0_0_0_1679509285_0/li_405_571# GND 1.29fF
+C41 INP GND 0.85fF
+.ends
+</pre>
+</details>
+![image](https://user-images.githubusercontent.com/86735438/227027554-fce604c6-d879-4260-940a-fdc47284214e.png)
+![image](https://user-images.githubusercontent.com/86735438/227027634-e6d41407-6311-4627-866c-8feeb3624898.png)
+![image](https://user-images.githubusercontent.com/86735438/227027829-e4e0243d-908f-487c-829e-9efbfededc5c.png)
+####POST LAYOUT OUTPUT
+![image](https://user-images.githubusercontent.com/86735438/227028188-cd022432-e381-4337-9534-f88c86160407.png)
   #### Schematic of ADc with Ring Oscillator
   ![image](https://user-images.githubusercontent.com/86735438/226070596-7e39be40-164e-4f47-9b9a-611ca9c0037b.png)
 
