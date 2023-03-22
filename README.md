@@ -455,7 +455,7 @@ plot v(out) v(inp)
   ![image](https://user-images.githubusercontent.com/86735438/226058362-20d8bc16-2141-4429-9690-c9dfecc88290.png)
 ![image](https://user-images.githubusercontent.com/86735438/226061351-3ae491bd-be90-4a1b-a13c-c1d9836bbcf9.png)
 #### NOTE : The output was always clamped to max voltage as shown below
-  <details>
+<details>
 <summary>ADC post layout align netlist with control statements</summary>
 <pre>** SPICE3 file created from OPAMP_MOD_0.ext - technology: sky130A
 X1 OUT VDD GND INP INN BIAS OPAMP_MOD_0
@@ -537,7 +537,7 @@ C41 INP GND 0.85fF
 .ends
 </pre>
 </details>
-###</b>HOW POST LAYOUT WAS MATCHED WITH PRE LAYOUT SIMULATION</b>
+#### HOW POST LAYOUT WAS MATCHED WITH PRE LAYOUT SIMULATION
 A careful observation of the above netlist showed that INN, BIAS, OUT were not reflected in FET instances. Also the Drain terminal of Bias transistor was connected to GND eventhough it was not as uch in spice.
 A careful modification of netlist to reflect INN, BIAS, OUT and temp(Drain terminal of Bias transistor) was done as shown in the code below:
 <details>
@@ -622,5 +622,9 @@ C41 INP GND 0.85fF
 .ends
 </pre>
 </details>
-#### POST LAYOUT OUTPUT
-  ![image](https://user-images.githubusercontent.com/86735438/227033552-f8162829-01d4-4815-8202-711f5d05337e.png)
+![image](https://user-images.githubusercontent.com/86735438/227035322-1cacd7e0-68ba-4de8-9ba9-ed6038ead2e7.png)
+![image](https://user-images.githubusercontent.com/86735438/227035385-874107d4-e64d-44f4-80ea-2c51362f634f.png)
+![image](https://user-images.githubusercontent.com/86735438/227035540-fc2a31e0-184a-45cb-a32b-a97c675aa89a.png)
+![image](https://user-images.githubusercontent.com/86735438/227035760-851acf79-deef-4dbb-8afd-897626ce8917.png)
+#### 4.  POST LAYOUT OUTPUT
+![image](https://user-images.githubusercontent.com/86735438/227033552-f8162829-01d4-4815-8202-711f5d05337e.png)
