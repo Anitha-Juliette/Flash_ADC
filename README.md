@@ -540,6 +540,7 @@ C41 INP GND 0.85fF
 ###</b>HOW POST LAYOUT WAS MATCHED WITH PRE LAYOUT SIMULATION</b>
 A careful observation of the above netlist showed that INN, BIAS, OUT were not reflected in FET instances. Also the Drain terminal of Bias transistor was connected to GND eventhough it was not as uch in spice.
 A careful modification of netlist to reflect INN, BIAS, OUT and temp(Drain terminal of Bias transistor) was done as shown in the code below:
+<details>
 <summary> MODIFIED ADC post layout align netlist with control statements</summary>
 <pre>* SPICE3 file created from OPAMP_MOD_0.ext - technology: sky130A
 X1 OUT VDD GND INP INN BIAS OPAMP_MOD_0
@@ -621,13 +622,8 @@ C41 INP GND 0.85fF
 .ends
 </pre>
 </details>
-![image](https://user-images.githubusercontent.com/86735438/227027554-fce604c6-d879-4260-940a-fdc47284214e.png)
-![image](https://user-images.githubusercontent.com/86735438/227027634-e6d41407-6311-4627-866c-8feeb3624898.png)
-![image](https://user-images.githubusercontent.com/86735438/227027829-e4e0243d-908f-487c-829e-9efbfededc5c.png)
-####POST LAYOUT OUTPUT
-![image](https://user-images.githubusercontent.com/86735438/227028188-cd022432-e381-4337-9534-f88c86160407.png)
-  #### Schematic of ADc with Ring Oscillator
-  ![image](https://user-images.githubusercontent.com/86735438/226070596-7e39be40-164e-4f47-9b9a-611ca9c0037b.png)
+#### Schematic of ADc with Ring Oscillator
+![image](https://user-images.githubusercontent.com/86735438/226070596-7e39be40-164e-4f47-9b9a-611ca9c0037b.png)
 
 
 
