@@ -622,17 +622,5 @@ C41 INP GND 0.85fF
 .ends
 </pre>
 </details>
-#### Schematic of ADc with Ring Oscillator
-![image](https://user-images.githubusercontent.com/86735438/226070596-7e39be40-164e-4f47-9b9a-611ca9c0037b.png)
-
-
-
-
-  
-
-  
-  
-  
-
-
-
+#### POST LAYOUT OUTPUT
+  ![image](https://user-images.githubusercontent.com/86735438/227033552-f8162829-01d4-4815-8202-711f5d05337e.png)
