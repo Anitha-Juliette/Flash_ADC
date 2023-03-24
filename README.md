@@ -631,3 +631,51 @@ C41 INP GND 0.85fF
 ![image](https://user-images.githubusercontent.com/86735438/227035760-851acf79-deef-4dbb-8afd-897626ce8917.png)
 #### 7.  POST LAYOUT OUTPUT OF 1- BIT ADC
 ![image](https://user-images.githubusercontent.com/86735438/227033552-f8162829-01d4-4815-8202-711f5d05337e.png)
+## <div align="center"> WEEK6 AI's
+### Creation of Verilog files & Merging Analog lef & gds with Openroad flow using Openfasoc and generate file GDS II file
+#### 1. Verilog files
+        module vsdudc(
+         input bias,
+         input inn,
+         output out
+         );
+         wire temp;
+          OPAMP_MOD_0 adc1(
+         .INP(temp),.INN(inn),.BIAS(bias),.OUT(out)
+         );
+
+         OSC_0 osc1(
+         .OUT(temp)
+         );
+        endmodule
+ 
+        module OPAMP_MOD_0(
+            input INP,
+            input INN,
+            input BIAS,
+            output OUT
+        );
+        endmodule
+        module OSC_0(
+            output OUT
+        );
+        endmodule
+   
+#### 2. Heirarchial directory structure for Openfasoc flow
+##### Created a design folder vsdudc-gen with heirarchial structure
+![image](https://user-images.githubusercontent.com/86735438/227647090-9f856dc8-237d-43e7-ba0a-d099fcf06c45.png)
+#### 3. Modify config.mk : DESIGN_NICKNAME, DESIGN_NAME, LEF & GDS of Auxillary cells
+![image](https://user-images.githubusercontent.com/86735438/227649075-bc358ed3-05cd-4b52-a78f-52f4f585896e.png)
+#### 4. Execute 
+      make vsdudc_sky13hd_verilog
+#### Verilog files are generated
+![image](https://user-images.githubusercontent.com/86735438/227652813-33dae4f1-8234-458e-872c-2eb4d7ff4334.png)
+#### 5. cd into flow directory and start the Verilog to GDS II
+###### Synthesis was completed
+![image](https://user-images.githubusercontent.com/86735438/227653381-ad88d7b3-ad28-410d-b663-422a64bf73da.png)
+###### Floor plan had errors
+![image](https://user-images.githubusercontent.com/86735438/227653725-f865f41e-e334-4bb2-82fc-7fb272a6b297.png)
+Work under Progrss
+
+
+
