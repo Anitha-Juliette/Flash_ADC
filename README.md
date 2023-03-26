@@ -693,3 +693,15 @@ C41 INP GND 0.85fF
 ###### Placement was completed
   ![image](https://user-images.githubusercontent.com/86735438/227795628-fc48d47b-33d6-448c-877e-abbbfbe51ed6.png)
   ![image](https://user-images.githubusercontent.com/86735438/227795689-be124de2-56d3-481f-8f1a-f54328fb1a17.png)
+  $ run route
+###### Routing was completed
+  ![image](https://user-images.githubusercontent.com/86735438/227797138-7efdd74e-1b3c-4372-a506-8dfd0146f173.png)
+  ![image](https://user-images.githubusercontent.com/86735438/227797171-5188b8d9-7733-4105-a277-c7815b891667.png)
+  ![image](https://user-images.githubusercontent.com/86735438/227797214-13a7e9d2-50fa-4c2a-9087-7179bc9702f0.png)
+  ![image](https://user-images.githubusercontent.com/86735438/227797297-04914480-e7d0-4d95-8160-ee205bd80435.png)
+  ![image](https://user-images.githubusercontent.com/86735438/227797329-a68466a5-54ef-4e94-9385-19909b6dc4b7.png)
+  ![image](https://user-images.githubusercontent.com/86735438/227797356-27b61bd3-58e8-4b5a-97fb-07e39aab5f70.png)
+
+
+
+
