@@ -701,6 +701,11 @@ C41 INP GND 0.85fF
   ![image](https://user-images.githubusercontent.com/86735438/227797297-04914480-e7d0-4d95-8160-ee205bd80435.png)
   ![image](https://user-images.githubusercontent.com/86735438/227797329-a68466a5-54ef-4e94-9385-19909b6dc4b7.png)
   ![image](https://user-images.githubusercontent.com/86735438/227797356-27b61bd3-58e8-4b5a-97fb-07e39aab5f70.png)
+  $ run finish
+  #### gds generated
+  ![image](https://user-images.githubusercontent.com/86735438/227798249-a80d2cd6-8896-4284-89be-f8401db7b33d.png)
+
+  
 
 
 
