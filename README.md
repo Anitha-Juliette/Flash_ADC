@@ -673,9 +673,16 @@ C41 INP GND 0.85fF
 #### 5. cd into flow directory and start the Verilog to GDS II
 ###### Synthesis was completed
 ![image](https://user-images.githubusercontent.com/86735438/227653381-ad88d7b3-ad28-410d-b663-422a64bf73da.png)
-###### Floor plan had errors
-![image](https://user-images.githubusercontent.com/86735438/227653725-f865f41e-e334-4bb2-82fc-7fb272a6b297.png)
-Work under Progrss
+###### Floor plan was completed
+![image](https://user-images.githubusercontent.com/86735438/227769940-054005a6-db53-4976-9ff2-7c31ea8b4b30.png)
+![image](https://user-images.githubusercontent.com/86735438/227769962-8c18a05f-dd4f-479a-8737-fc17eb12a0c0.png)
+![image](https://user-images.githubusercontent.com/86735438/227769984-9b2905d9-c5db-4c11-8ae0-224cb5402292.png)
+![image](https://user-images.githubusercontent.com/86735438/227770060-8ffaee1e-93ec-45af-8de9-d2bb13b93a5a.png)
+![image](https://user-images.githubusercontent.com/86735438/227770079-076e4a1c-bced-4da2-b2f3-68ce9910ae57.png)
+  </b>make gui_floorplan<b>
+![image](https://user-images.githubusercontent.com/86735438/227770100-b92b1969-f22d-4651-aef8-5782801e53e8.png)
+![image](https://user-images.githubusercontent.com/86735438/227770170-c78d9adb-9382-46f7-8170-ff9ee1a91b94.png)
+![image](https://user-images.githubusercontent.com/86735438/227770291-da809910-c265-4c1b-a730-4d3ce011af80.png)
 
 
 
