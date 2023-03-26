@@ -671,18 +671,25 @@ C41 INP GND 0.85fF
 #### Verilog files are generated
 ![image](https://user-images.githubusercontent.com/86735438/227652813-33dae4f1-8234-458e-872c-2eb4d7ff4334.png)
 #### 5. cd into flow directory and start the Verilog to GDS II
+    $ export OPENROAD=~/OpenROAD-flow-scripts/tools/OpenROAD
+    $ export PATH=~/OpenROAD-flow-scripts/tools/install/OpenROAD/bin:~/OpenROAD-flow-scripts/tools/install/yosys/bin:~       /OpenROAD-flow-scripts/tools/install/LSOracle/bin:$PATH
+    $ export PDK_ROOT=/usr/local/share/pdk
+    $ make synth
 ###### Synthesis was completed
 ![image](https://user-images.githubusercontent.com/86735438/227653381-ad88d7b3-ad28-410d-b663-422a64bf73da.png)
+    $ make floorplan
 ###### Floor plan was completed
 ![image](https://user-images.githubusercontent.com/86735438/227769940-054005a6-db53-4976-9ff2-7c31ea8b4b30.png)
 ![image](https://user-images.githubusercontent.com/86735438/227769962-8c18a05f-dd4f-479a-8737-fc17eb12a0c0.png)
 ![image](https://user-images.githubusercontent.com/86735438/227769984-9b2905d9-c5db-4c11-8ae0-224cb5402292.png)
 ![image](https://user-images.githubusercontent.com/86735438/227770060-8ffaee1e-93ec-45af-8de9-d2bb13b93a5a.png)
 ![image](https://user-images.githubusercontent.com/86735438/227770079-076e4a1c-bced-4da2-b2f3-68ce9910ae57.png)
-  </b>make gui_floorplan<b>
+    $ make gui_floorplan
 ![image](https://user-images.githubusercontent.com/86735438/227770100-b92b1969-f22d-4651-aef8-5782801e53e8.png)
 ![image](https://user-images.githubusercontent.com/86735438/227770170-c78d9adb-9382-46f7-8170-ff9ee1a91b94.png)
 ![image](https://user-images.githubusercontent.com/86735438/227770291-da809910-c265-4c1b-a730-4d3ce011af80.png)
-
-
-
+  $ make gui_floorplan
+  $ run place
+###### Placement was completed
+  ![image](https://user-images.githubusercontent.com/86735438/227795628-fc48d47b-33d6-448c-877e-abbbfbe51ed6.png)
+  ![image](https://user-images.githubusercontent.com/86735438/227795689-be124de2-56d3-481f-8f1a-f54328fb1a17.png)
