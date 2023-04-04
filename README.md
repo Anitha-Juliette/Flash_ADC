@@ -635,21 +635,20 @@ C41 INP GND 0.85fF
 ### Creation of Verilog files & Merging Analog lef & gds with Openroad flow using Openfasoc and generate file GDS II file
 #### 1. Verilog files
         module vsdudc(
-         input bias,
-         input inn,
-         output out
-         );
-         wire temp;
-          OPAMP_MOD_0 adc1(
-         .INP(temp),.INN(inn),.BIAS(bias),.OUT(out)
-         );
-
-         OSC_0 osc1(
-         .OUT(temp)
-         );
-        endmodule
+        input bias,
+        input inn,
+        output out
+        );
+        wire temp;
  
-        module OPAMP_MOD_0(
+        COMPARATOR adc1(.INP(temp),.INN(inn),.BIAS(bias),.OUT(out)
+       );
+ 
+       OSC_0 osc1(.OUT(temp)
+       );
+       endmodule
+ 
+        module COMPARATOR(
             input INP,
             input INN,
             input BIAS,
