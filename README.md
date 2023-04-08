@@ -707,7 +707,7 @@ C41 INP GND 0.85fF
 ## To design the analog parts of 3 bit Flash ADC
 ## Circuit Diagram of 3 bit Flash Type ADC
 ![image](https://user-images.githubusercontent.com/86735438/230716088-830a27e5-9a03-48d4-865f-13268e67834b.png)
-## 1. Design of analog parts of Flash ADC using Xschem. Since resistors are not supported by Align, direct Voltage references have been used.
+#### 1. Design of analog parts of Flash ADC using Xschem. Since resistors are not supported by Align, direct Voltage references have been used.
 ![image](https://user-images.githubusercontent.com/86735438/230716153-a47aaaf0-57ff-4af2-9129-502bbf903686.png)
 <details>
 <summary>Xschem Netlist for 3 bit Flash ADC</summary>
@@ -801,6 +801,9 @@ XM11 OUT net5 GND GND sky130_fd_pr__nfet_01v8 L=0.15 W=0.84 nf=1 ad='int((nf+1)/
 .end
 </pre>
 </details>
+### 2. Presimulation in ngspice
+![image](https://user-images.githubusercontent.com/86735438/230716338-85d6c2a8-eb51-42cd-93dd-16e26b9af4ba.png)
+  
   
 
 
