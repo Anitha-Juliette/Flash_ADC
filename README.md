@@ -836,13 +836,39 @@ x7 VDD D1 VR1 INP BIAS GND opamp_mod
 .ends
 </pre>
 </details>
+  
 #### 3. FLASH_ADC_0.gds 
   ![image](https://user-images.githubusercontent.com/86735438/230718819-755f8ec3-4037-4f4e-b3c1-ecd91f5ff49d.png)
   
 <details>
-<summary>Align Post Spice for 3 bit Flash ADC</summary>
+<summary>Align Post Spice with Testbench for 3 bit Flash ADC</summary>
 <pre>
-.subckt FLASH_ADC_0 VR7 INP D7 VR6 D6 VR5 D5 VR4 D4 VR3 D3 VR2 D2 VR1 D1 VDD GND
+V1 VR7 GND 2.625
+.save i(v1)
+V2 VR6 GND 2.25
+.save i(v2)
+V3 VR5 GND 1.875
+.save i(v3)
+V4 VR4 GND 1.5
+.save i(v4)
+V5 VR3 GND 1.125
+.save i(v5)
+V6 VR2 GND 0.75
+.save i(v6)
+V7 VR1 GND 0.375
+.save i(v7)
+V8 VDD GND 3
+.save i(v8)
+V9 INP GND sine(0 3 100000000)
+.save i(v9)
+x1 D7 D6 D5 D4 D3 D2 D1 VR7 VR6 VR5 VR4 VR3 VR2 VR1 INP VDD GND FLASH_ADC_0
+.lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+.control
+save all
+tran 100p 4n
+plot v(D7) v(D6) v(D5) v(D4) v(D3) v(D2) v(D1) v(INP)
+.endc
+.subckt FLASH_ADC_0 D7 D6 D5 D4 D3 D2 D1 VR7 VR6 VR5 VR4 VR3 VR2 VR1 INP VDD GND
 X0 a_10416_8163# a_9728_8163# VDD VDD sky130_fd_pr__pfet_01v8 ad=0.1176 pd=1.12 as=0.1176 ps=1.12 w=0.84 l=0.15
 X1 a_21222_7863# a_21738_7863# GND GND sky130_fd_pr__nfet_01v8 ad=0.1176 pd=1.12 as=0.2226 ps=2.21 w=0.84 l=0.15
 X2 a_9728_8163# VR4 a_9645_8163# GND sky130_fd_pr__nfet_01v8 ad=0.1176 pd=1.12 as=0.1176 ps=1.12 w=0.84 l=0.15
@@ -1412,7 +1438,10 @@ C397 a_6946_7863# GND 0.92fF
 .ends
 </pre>
 </details>
- 
+
+  ![image](https://user-images.githubusercontent.com/86735438/230720518-29fb6f13-4bd5-4d4b-b858-356b2cf593c5.png)
+
+
 
 
 
