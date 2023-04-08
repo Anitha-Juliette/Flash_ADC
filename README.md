@@ -803,7 +803,37 @@ XM11 OUT net5 GND GND sky130_fd_pr__nfet_01v8 L=0.15 W=0.84 nf=1 ad='int((nf+1)/
 </details>
 ### 2. Presimulation in ngspice
 ![image](https://user-images.githubusercontent.com/86735438/230716338-85d6c2a8-eb51-42cd-93dd-16e26b9af4ba.png)
-  
+### 3. Align Flow for analog blocks of Flash ADC
+      $ python -m venv general
+      $ source general/bin/activate
+      $ schematic2layout.py /home/ani/flash_adc/xschem -p /home/ani/ALIGN-public/pdks/SKY130_PDK
+<details>
+<summary>Align Spice Netlist for 3 bit Flash ADC - flash_adc.sp</summary>
+<pre>
+.subckt opamp_mod VDD OUT INN INP BIAS GND
+XM1 net1 net1 VDD VDD sky130_fd_pr__pfet_01v8 L=150e-09 W=840e-09 nf=2
+XM2 net2 net1 VDD VDD sky130_fd_pr__pfet_01v8 L=150e-09 W=840e-09 nf=2
+XM3 net1 INN net3 GND sky130_fd_pr__nfet_01v8 L=150e-09 W=840e-09 nf=2 m=2
+XM4 net2 INP net3 GND sky130_fd_pr__nfet_01v8 L=150e-09 W=840e-09 nf=2
+XM5 net3 BIAS GND GND sky130_fd_pr__nfet_01v8 L=150e-09 W=840e-09 nf=2
+XM6 net4 net2 VDD VDD sky130_fd_pr__pfet_01v8 L=150e-09 W=840e-09 nf=2
+XM7 net4 net2 GND GND sky130_fd_pr__nfet_01v8 L=150e-09 W=840e-09 nf=2
+XM8 net5 net4 VDD VDD sky130_fd_pr__pfet_01v8 L=150e-09 W=840e-09 nf=2
+XM9 net5 net4 GND GND sky130_fd_pr__nfet_01v8 L=150e-09 W=840e-09 nf=2
+XM10 OUT net5 VDD VDD sky130_fd_pr__pfet_01v8 L=150e-09 W=840e-09 nf=2
+XM11 OUT net5 GND GND sky130_fd_pr__nfet_01v8 L=150e-09 W=840e-09 nf=2
+.ends
+.subckt flash_adc D7 D6 D5 D4 D3 D2 D1 VR7 VR6 VR5 VR4 VR3 VR2 VR1 VDD INP GND
+x1 VDD D7 VR7 INP BIAS GND opamp_mod
+x2 VDD D6 VR6 INP BIAS GND opamp_mod
+x3 VDD D5 VR5 INP BIAS GND opamp_mod
+x4 VDD D4 VR4 INP BIAS GND opamp_mod
+x5 VDD D3 VR3 INP BIAS GND opamp_mod
+x6 VDD D2 VR2 INP BIAS GND opamp_mod
+x7 VDD D1 VR1 INP BIAS GND opamp_mod
+.ends
+</pre>
+</details>
   
 
 
