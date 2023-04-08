@@ -802,11 +802,12 @@ XM11 OUT net5 GND GND sky130_fd_pr__nfet_01v8 L=0.15 W=0.84 nf=1 ad='int((nf+1)/
 </pre>
 </details>
 ### 2. Presimulation in ngspice
-![image](https://user-images.githubusercontent.com/86735438/230716338-85d6c2a8-eb51-42cd-93dd-16e26b9af4ba.png)
+  ![image](https://user-images.githubusercontent.com/86735438/230716338-85d6c2a8-eb51-42cd-93dd-16e26b9af4ba.png)
 ### 3. Align Flow for analog blocks of Flash ADC
-      $ python -m venv general
-      $ source general/bin/activate
-      $ schematic2layout.py /home/ani/flash_adc/xschem -p /home/ani/ALIGN-public/pdks/SKY130_PDK
+    $ python -m venv general
+    $ source general/bin/activate
+    $ schematic2layout.py /home/ani/flash_adc/xschem -p /home/ani/ALIGN-public/pdks/SKY130_PDK
+#### Spice Netlist
 <details>
 <summary>Align Spice Netlist for 3 bit Flash ADC - flash_adc.sp</summary>
 <pre>
