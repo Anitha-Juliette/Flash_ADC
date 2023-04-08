@@ -1441,9 +1441,5 @@ C397 a_6946_7863# GND 0.92fF
 
   ![image](https://user-images.githubusercontent.com/86735438/230720518-29fb6f13-4bd5-4d4b-b858-356b2cf593c5.png)
 
-
-
-
-
-
-
+#### 4. Align Post Layout simulation for 3 bit Flash ADC
+  ![image](https://user-images.githubusercontent.com/86735438/230720792-48337e78-6df5-43d9-a50c-51880e2621c8.png)
