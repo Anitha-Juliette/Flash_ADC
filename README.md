@@ -703,7 +703,104 @@ C41 INP GND 0.85fF
   $ run finish
   #### gds generated
   ![image](https://user-images.githubusercontent.com/86735438/227798249-a80d2cd6-8896-4284-89be-f8401db7b33d.png)
+## <div align="center"> WEEK7 AI - 3 BIT FLASH ADC 
+## To design the analog parts of 3 bit Flash ADC
+## Circuit Diagram of 3 bit Flash Type ADC
+![image](https://user-images.githubusercontent.com/86735438/230716088-830a27e5-9a03-48d4-865f-13268e67834b.png)
+## 1. Design of analog parts of Flash ADC using Xschem. Since resistors are not supported by Align, direct Voltage references have been used.
+![image](https://user-images.githubusercontent.com/86735438/230716153-a47aaaf0-57ff-4af2-9129-502bbf903686.png)
+<details>
+<summary>Xschem Netlist for 3 bit Flash ADC</summary>
+<pre>x1 VDD D7 VR7 INP BIAS GND opamp_mod
+x2 VDD D6 VR6 INP BIAS GND opamp_mod
+x3 VDD D5 VR5 INP BIAS GND opamp_mod
+x4 VDD D4 VR4 INP BIAS GND opamp_mod
+x5 VDD D3 VR3 INP BIAS GND opamp_mod
+x6 VDD D2 VR2 INP BIAS GND opamp_mod
+x7 VDD D1 VR1 INP BIAS GND opamp_mod
+V1 VR7 GND 2.625
+.save i(v1)
+V2 VR6 GND 2.25
+.save i(v2)
+V3 VR5 GND 1.875
+.save i(v3)
+V4 VR4 GND 1.5
+.save i(v4)
+V5 VR3 GND 1.125
+.save i(v5)
+V6 VR2 GND 0.75
+.save i(v6)
+V7 VR1 GND 0.375
+.save i(v7)
+V8 VDD GND 3
+.save i(v8)
+V9 INP GND sine(0 3 100000000)
+.save i(v9)
+V10 BIAS GND 1.5
+.save i(v10)
+**** begin user architecture code
 
+.lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+
+
+.control
+save all
+tran 100p 4n
+plot v(D7) v(D6) v(D5) v(D4) v(D3) v(D2) v(D1) v(INP)
+.endc
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  opamp_mod.sym # of pins=6
+** sym_path: /home/ani/flash_adc/xschem/opamp_mod.sym
+** sch_path: /home/ani/flash_adc/xschem/opamp_mod.sch
+.subckt opamp_mod VDD OUT INN INP BIAS GND
+*.opin OUT
+*.ipin INP
+*.ipin INN
+*.ipin VDD
+*.ipin GND
+*.ipin BIAS
+XM1 net1 net1 VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=0.84 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM2 net2 net1 VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=0.84 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM3 net1 INN net3 GND sky130_fd_pr__nfet_01v8 L=0.15 W=0.84 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM4 net2 INP net3 GND sky130_fd_pr__nfet_01v8 L=0.15 W=0.84 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM5 net3 BIAS GND GND sky130_fd_pr__nfet_01v8 L=0.15 W=0.84 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM6 net4 net2 VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=0.84 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM7 net4 net2 GND GND sky130_fd_pr__nfet_01v8 L=0.15 W=0.84 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM8 net5 net4 VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=0.84 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM9 net5 net4 GND GND sky130_fd_pr__nfet_01v8 L=0.15 W=0.84 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM10 OUT net5 VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=0.84 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM11 OUT net5 GND GND sky130_fd_pr__nfet_01v8 L=0.15 W=0.84 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+.GLOBAL GND
+.end
+</pre>
+</details>
   
 
 
