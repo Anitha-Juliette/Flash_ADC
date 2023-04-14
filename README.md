@@ -634,75 +634,73 @@ C41 INP GND 0.85fF
 ## <div align="center"> WEEK6 AI's
 ### Creation of Verilog files & Merging Analog lef & gds with Openroad flow using Openfasoc and generate file GDS II file
 #### 1. Verilog files
-        module vsdudc(
-        input bias,
-        input inn,
-        output out
-        );
-        wire temp;
- 
-        COMPARATOR adc1(.INP(temp),.INN(inn),.BIAS(bias),.OUT(out)
-       );
- 
-       OSC_0 osc1(.OUT(temp)
-       );
-       endmodule
- 
-        module COMPARATOR(
-            input INP,
-            input INN,
-            input BIAS,
-            output OUT
-        );
-        endmodule
-        module OSC_0(
-            output OUT
-        );
-        endmodule
-   
+    module async_up_down(
+    input bias,
+    input inn,
+    output out
+    );
+    wire temp;
+
+    COMPARATOR adc1(
+    .INP(temp),.INN(inn),.BIAS(bias),.OUT(out)
+    );
+
+    OSC osc1(
+    .OUT(temp)
+    );
+    endmodule
+    
+    module COMPARATOR(
+    input INP,
+    input INN,
+    input BIAS,
+    output OUT
+    );
+    endmodule
+    
+    module OSC(
+    output OUT
+    );
+    endmodule
 #### 2. Heirarchial directory structure for Openfasoc flow
-##### Created a design folder vsdudc-gen with heirarchial structure
-![image](https://user-images.githubusercontent.com/86735438/227647090-9f856dc8-237d-43e7-ba0a-d099fcf06c45.png)
+##### Created a design folder async_up_down-gen with heirarchial structure
+![image](https://user-images.githubusercontent.com/86735438/232074855-2d856894-081d-4f7f-aa27-2eff2c43c257.png)
 #### 3. Modify config.mk : DESIGN_NICKNAME, DESIGN_NAME, LEF & GDS of Auxillary cells
-![image](https://user-images.githubusercontent.com/86735438/227649075-bc358ed3-05cd-4b52-a78f-52f4f585896e.png)
 #### 4. Execute 
-      make vsdudc_sky13hd_verilog
+      make async_up_down_sky130hd_verilog
 #### Verilog files are generated
-![image](https://user-images.githubusercontent.com/86735438/227652813-33dae4f1-8234-458e-872c-2eb4d7ff4334.png)
+![image](https://user-images.githubusercontent.com/86735438/232076156-460b112e-f43e-4023-904e-988e33ba80b9.png)
 #### 5. cd into flow directory and start the Verilog to GDS II
     $ export OPENROAD=~/OpenROAD-flow-scripts/tools/OpenROAD
     $ export PATH=~/OpenROAD-flow-scripts/tools/install/OpenROAD/bin:~/OpenROAD-flow-scripts/tools/install/yosys/bin:~       /OpenROAD-flow-scripts/tools/install/LSOracle/bin:$PATH
     $ export PDK_ROOT=/usr/local/share/pdk
     $ make synth
 ###### Synthesis was completed
-![image](https://user-images.githubusercontent.com/86735438/227653381-ad88d7b3-ad28-410d-b663-422a64bf73da.png)
+![image](https://user-images.githubusercontent.com/86735438/232077075-a822c45c-e4ef-48f1-8869-2781d23a49ea.png)
     $ make floorplan
-###### Floor plan was completed
-![image](https://user-images.githubusercontent.com/86735438/227769940-054005a6-db53-4976-9ff2-7c31ea8b4b30.png)
-![image](https://user-images.githubusercontent.com/86735438/227769962-8c18a05f-dd4f-479a-8737-fc17eb12a0c0.png)
-![image](https://user-images.githubusercontent.com/86735438/227769984-9b2905d9-c5db-4c11-8ae0-224cb5402292.png)
-![image](https://user-images.githubusercontent.com/86735438/227770060-8ffaee1e-93ec-45af-8de9-d2bb13b93a5a.png)
-![image](https://user-images.githubusercontent.com/86735438/227770079-076e4a1c-bced-4da2-b2f3-68ce9910ae57.png)
+###### modify placement loactions of the two cells in manual_macro.tcl file. Floor plan was completed
+![image](https://user-images.githubusercontent.com/86735438/232078092-08a4812c-e42c-4ce8-ade2-58f70dca6f0b.png)
+![image](https://user-images.githubusercontent.com/86735438/232078244-47c80c13-0e5e-4d9d-8269-fb3f557b0cb6.png)
     $ make gui_floorplan
-![image](https://user-images.githubusercontent.com/86735438/227770100-b92b1969-f22d-4651-aef8-5782801e53e8.png)
-![image](https://user-images.githubusercontent.com/86735438/227770170-c78d9adb-9382-46f7-8170-ff9ee1a91b94.png)
-![image](https://user-images.githubusercontent.com/86735438/227770291-da809910-c265-4c1b-a730-4d3ce011af80.png)
-  $ make gui_floorplan
-  $ run place
+![image](https://user-images.githubusercontent.com/86735438/232079057-26d26b64-62b5-4716-8d94-43fe421c0075.png)
+    $ run place
 ###### Placement was completed
-  ![image](https://user-images.githubusercontent.com/86735438/227795628-fc48d47b-33d6-448c-877e-abbbfbe51ed6.png)
-  ![image](https://user-images.githubusercontent.com/86735438/227795689-be124de2-56d3-481f-8f1a-f54328fb1a17.png)
-  $ run route
+  ![image](https://user-images.githubusercontent.com/86735438/232079292-75bcf4c2-90b9-443a-90ff-05f50ce17efa.png)
+  $ make gui_place
+  ![image](https://user-images.githubusercontent.com/86735438/232079541-762d8ec5-3292-4379-938a-8291ba783541.png)
+  $ make route
 ###### Routing was completed
-  ![image](https://user-images.githubusercontent.com/86735438/227797138-7efdd74e-1b3c-4372-a506-8dfd0146f173.png)
-  ![image](https://user-images.githubusercontent.com/86735438/227797171-5188b8d9-7733-4105-a277-c7815b891667.png)
-  ![image](https://user-images.githubusercontent.com/86735438/227797214-13a7e9d2-50fa-4c2a-9087-7179bc9702f0.png)
-  ![image](https://user-images.githubusercontent.com/86735438/227797297-04914480-e7d0-4d95-8160-ee205bd80435.png)
-  ![image](https://user-images.githubusercontent.com/86735438/227797329-a68466a5-54ef-4e94-9385-19909b6dc4b7.png)
-  ![image](https://user-images.githubusercontent.com/86735438/227797356-27b61bd3-58e8-4b5a-97fb-07e39aab5f70.png)
-  $ run finish
+  ![image](https://user-images.githubusercontent.com/86735438/232079846-d76b094c-431f-48e7-864b-33d9bfec9e0d.png)
+  $ make gui_route
+  ![image](https://user-images.githubusercontent.com/86735438/232080079-0949905e-94b5-4e03-b600-eb982c8a2c14.png)
+  $ make finish
   #### gds generated
-  ![image](https://user-images.githubusercontent.com/86735438/227798249-a80d2cd6-8896-4284-89be-f8401db7b33d.png)
+  ![image](https://user-images.githubusercontent.com/86735438/232080519-a074c9af-4537-4571-a633-5e4fcdb78263.png)
+  ![image](https://user-images.githubusercontent.com/86735438/232082911-1fc8129d-ae32-4736-ae9e-9c77c40beb8d.png)
+#### 6. To check DRC alean: clean the flow directory. move out of flow directory and execute the following command
+  $ make sky130hd_async_up_down_full
+  ![image](https://user-images.githubusercontent.com/86735438/232081704-bee77a0b-5e78-4261-b529-71bb9d89c7de.png)
+###### Labels are visible in the gds file
 ## <div align="center"> WEEK7 AI - 3 BIT FLASH ADC 
 ## To design the analog parts of 3 bit Flash ADC
 ## Circuit Diagram of 3 bit Flash Type ADC
